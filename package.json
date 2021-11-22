@@ -2,7 +2,7 @@
     "name": "slang",
     "displayName": "slang",
     "description": "Slang IntelliSense, debugging, and code browsing.",
-    "version": "1.0.0-main",
+    "version": "1.0.1-main",
     "publisher": "smuccione",
     "readme": "README.md",
     "author": {
@@ -113,10 +113,10 @@
             {
                 "scopes": {
                     "variable": [
-                        "variable.other.local"
+                        "variable.local"
                     ],
                     "parameter": [
-                        "variable.other.parameter"
+                        "variable.parameter"
                     ],
                     "label": [
                         "entity.name.label"
@@ -145,15 +145,6 @@
                     "self": [
                         "variable.language"
                     ],
-                    "variable.local": [
-                        "variable.other.local"
-                    ],
-                    "property.static": [
-                        "variable.other.property.static"
-                    ],
-                    "method.static": [
-                        "entity.name.function.member.static"
-                    ],
                     "macro": [
                         "entity.name.function.preprocessor"
                     ],
@@ -181,8 +172,11 @@
                     "stringLiteral": [
                         "string.quoted"
                     ],
+                    "punctuation": [
+                        "meta"
+                    ],
                     "keywordFlow": [
-                        "keyword.flow"
+                        "keyword.control.flow"
                     ],
                     "keywordOperator": [
                         "keyword.operator"
@@ -420,23 +414,23 @@
             "type": "object",
             "title": "Client configuration",
             "properties": {
-              "dotLanguageServer.maxNumberOfProblems": {
-                "type": "number",
-                "default": 100,
-                "description": "Controls the maximum number of problems produced by the server."
-              },
-              "dotLanguageServer.trace.server": {
-                "type": "string",
-                "enum": [
-                  "off",
-                  "messages",
-                  "verbose"
-                ],
-                "default": "off",
-                "description": "Traces the communication between VSCode and the dotLanguageServer service."
-              }        
+                "dotLanguageServer.maxNumberOfy": {
+                    "type": "number",
+                    "default": 100,
+                    "description": "Controls the maximum number of problems produced by the server."
+                },
+                "dotLanguageServer.trace.server": {
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Traces the communication between VSCode and the dotLanguageServer service."
+                }
             }
-          }        
+        }
     },
     "scripts": {
         "vscode:prepublish": "yarn run compile",
@@ -518,5 +512,20 @@
         "yargs-parser": "^15.0.1",
         "y18n": "^5.0.5"
     },
-    "runtimeDependencies": []
+    "runtimeDependencies": [
+        {
+            "description": "Slang language components (Windows)",
+            "url": "https://www.fgl.org",
+            "platforms": [
+                "win32"
+            ],
+            "architectures": [
+                "x64",
+                "x86"
+            ],
+            "binaries": [
+                "./bin/slangd.exe"
+            ]
+        }
+    ]
 }

@@ -1,10 +1,22 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/await-notify/index.js":
-/*!********************************************!*\
-  !*** ./node_modules/await-notify/index.js ***!
-  \********************************************/
+/***/ 7492:
+/***/ ((module) => {
+
+function webpackEmptyContext(req) {
+	var e = new Error("Cannot find module '" + req + "'");
+	e.code = 'MODULE_NOT_FOUND';
+	throw e;
+}
+webpackEmptyContext.keys = () => ([]);
+webpackEmptyContext.resolve = webpackEmptyContext;
+webpackEmptyContext.id = 7492;
+module.exports = webpackEmptyContext;
+
+/***/ }),
+
+/***/ 8054:
 /***/ ((__unused_webpack_module, exports) => {
 
 function Subject() {
@@ -62,10 +74,7 @@ exports.Subject = Subject;
 
 /***/ }),
 
-/***/ "./node_modules/balanced-match/index.js":
-/*!**********************************************!*\
-  !*** ./node_modules/balanced-match/index.js ***!
-  \**********************************************/
+/***/ 7055:
 /***/ ((module) => {
 
 "use strict";
@@ -135,14 +144,11 @@ function range(a, b, str) {
 
 /***/ }),
 
-/***/ "./node_modules/brace-expansion/index.js":
-/*!***********************************************!*\
-  !*** ./node_modules/brace-expansion/index.js ***!
-  \***********************************************/
+/***/ 9158:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var concatMap = __webpack_require__(/*! concat-map */ "./node_modules/concat-map/index.js");
-var balanced = __webpack_require__(/*! balanced-match */ "./node_modules/balanced-match/index.js");
+var concatMap = __webpack_require__(1897);
+var balanced = __webpack_require__(7055);
 
 module.exports = expandTop;
 
@@ -346,10 +352,7 @@ function expand(str, isTop) {
 
 /***/ }),
 
-/***/ "./node_modules/concat-map/index.js":
-/*!******************************************!*\
-  !*** ./node_modules/concat-map/index.js ***!
-  \******************************************/
+/***/ 1897:
 /***/ ((module) => {
 
 module.exports = function (xs, fn) {
@@ -369,10 +372,7 @@ var isArray = Array.isArray || function (xs) {
 
 /***/ }),
 
-/***/ "./node_modules/minimatch/minimatch.js":
-/*!*********************************************!*\
-  !*** ./node_modules/minimatch/minimatch.js ***!
-  \*********************************************/
+/***/ 5076:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = minimatch
@@ -380,11 +380,11 @@ minimatch.Minimatch = Minimatch
 
 var path = { sep: '/' }
 try {
-  path = __webpack_require__(/*! path */ "path")
+  path = __webpack_require__(5622)
 } catch (er) {}
 
 var GLOBSTAR = minimatch.GLOBSTAR = Minimatch.GLOBSTAR = {}
-var expand = __webpack_require__(/*! brace-expansion */ "./node_modules/brace-expansion/index.js")
+var expand = __webpack_require__(9158)
 
 var plTypes = {
   '!': { open: '(?:(?!(?:', close: '))[^/]*?)'},
@@ -1302,14 +1302,11 @@ function regExpEscape (s) {
 
 /***/ }),
 
-/***/ "./node_modules/mkdirp/index.js":
-/*!**************************************!*\
-  !*** ./node_modules/mkdirp/index.js ***!
-  \**************************************/
+/***/ 596:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var path = __webpack_require__(/*! path */ "path");
-var fs = __webpack_require__(/*! fs */ "fs");
+var path = __webpack_require__(5622);
+var fs = __webpack_require__(5747);
 var _0777 = parseInt('0777', 8);
 
 module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
@@ -1411,10 +1408,7 @@ mkdirP.sync = function sync (p, opts, made) {
 
 /***/ }),
 
-/***/ "./src/Debugger/activateSlangDebug.ts":
-/*!********************************************!*\
-  !*** ./src/Debugger/activateSlangDebug.ts ***!
-  \********************************************/
+/***/ 2656:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -1430,8 +1424,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.workspaceFileAccessor = exports.activateslangDebug = void 0;
-const vscode = __webpack_require__(/*! vscode */ "vscode");
-const slangDebug_1 = __webpack_require__(/*! ./slangDebug */ "./src/Debugger/slangDebug.ts");
+const vscode = __webpack_require__(7549);
+const slangDebug_1 = __webpack_require__(7228);
 function activateslangDebug(context, factory) {
     context.subscriptions.push(vscode.commands.registerCommand('extension.slang-debug.runEditorContents', (resource) => {
         let targetResource = resource;
@@ -1608,18 +1602,15 @@ class InlineDebugAdapterFactory {
 
 /***/ }),
 
-/***/ "./src/Debugger/extension.ts":
-/*!***********************************!*\
-  !*** ./src/Debugger/extension.ts ***!
-  \***********************************/
+/***/ 2763:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.deactivate = exports.activate = void 0;
-const vscode = __webpack_require__(/*! vscode */ "vscode");
-const activateSlangDebug_1 = __webpack_require__(/*! ./activateSlangDebug */ "./src/Debugger/activateSlangDebug.ts");
+const vscode = __webpack_require__(7549);
+const activateSlangDebug_1 = __webpack_require__(2656);
 function activate(context) {
     activateSlangDebug_1.activateslangDebug(context, new SlangDebugAdapterServerDescriptorFactory());
 }
@@ -1636,10 +1627,7 @@ class SlangDebugAdapterServerDescriptorFactory {
 
 /***/ }),
 
-/***/ "./src/Debugger/slangDebug.ts":
-/*!************************************!*\
-  !*** ./src/Debugger/slangDebug.ts ***!
-  \************************************/
+/***/ 7228:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -1655,10 +1643,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.slangDebugSession = void 0;
-const vscode_debugadapter_1 = __webpack_require__(/*! vscode-debugadapter */ "./node_modules/vscode-debugadapter/lib/main.js");
-const path_1 = __webpack_require__(/*! path */ "path");
-const slangRuntime_1 = __webpack_require__(/*! ./slangRuntime */ "./src/Debugger/slangRuntime.ts");
-const Subject = __webpack_require__(/*! await-notify */ "./node_modules/await-notify/index.js");
+const vscode_debugadapter_1 = __webpack_require__(827);
+const path_1 = __webpack_require__(5622);
+const slangRuntime_1 = __webpack_require__(2415);
+const Subject = __webpack_require__(8054);
 function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -2135,10 +2123,7 @@ slangDebugSession.threadID = 1;
 
 /***/ }),
 
-/***/ "./src/Debugger/slangRuntime.ts":
-/*!**************************************!*\
-  !*** ./src/Debugger/slangRuntime.ts ***!
-  \**************************************/
+/***/ 2415:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -2154,7 +2139,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.slangRuntime = void 0;
-const events_1 = __webpack_require__(/*! events */ "events");
+const events_1 = __webpack_require__(8614);
 class slangRuntime extends events_1.EventEmitter {
     constructor(_fileAccessor) {
         super();
@@ -2438,10 +2423,7 @@ exports.slangRuntime = slangRuntime;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-debugadapter/lib/debugSession.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/vscode-debugadapter/lib/debugSession.js ***!
-  \**************************************************************/
+/***/ 6928:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -2452,10 +2434,10 @@ exports.slangRuntime = slangRuntime;
  *--------------------------------------------------------------------------------------------*/
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DebugSession = exports.ErrorDestination = exports.InvalidatedEvent = exports.ProgressEndEvent = exports.ProgressUpdateEvent = exports.ProgressStartEvent = exports.CapabilitiesEvent = exports.LoadedSourceEvent = exports.ModuleEvent = exports.BreakpointEvent = exports.ThreadEvent = exports.OutputEvent = exports.TerminatedEvent = exports.InitializedEvent = exports.ContinuedEvent = exports.StoppedEvent = exports.CompletionItem = exports.Module = exports.Breakpoint = exports.Variable = exports.Thread = exports.StackFrame = exports.Scope = exports.Source = void 0;
-const protocol_1 = __webpack_require__(/*! ./protocol */ "./node_modules/vscode-debugadapter/lib/protocol.js");
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-debugadapter/lib/messages.js");
-const runDebugAdapter_1 = __webpack_require__(/*! ./runDebugAdapter */ "./node_modules/vscode-debugadapter/lib/runDebugAdapter.js");
-const url_1 = __webpack_require__(/*! url */ "url");
+const protocol_1 = __webpack_require__(5399);
+const messages_1 = __webpack_require__(3777);
+const runDebugAdapter_1 = __webpack_require__(9182);
+const url_1 = __webpack_require__(8835);
 class Source {
     constructor(name, path, id = 0, origin, data) {
         this.name = name;
@@ -3220,10 +3202,7 @@ DebugSession._formatPIIRegexp = /{([^}]+)}/g;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-debugadapter/lib/handles.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/vscode-debugadapter/lib/handles.js ***!
-  \*********************************************************/
+/***/ 3461:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3258,10 +3237,7 @@ exports.Handles = Handles;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-debugadapter/lib/internalLogger.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/vscode-debugadapter/lib/internalLogger.js ***!
-  \****************************************************************/
+/***/ 2995:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -3281,9 +3257,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.InternalLogger = void 0;
-const fs = __webpack_require__(/*! fs */ "fs");
-const path = __webpack_require__(/*! path */ "path");
-const mkdirp = __webpack_require__(/*! mkdirp */ "./node_modules/mkdirp/index.js");
+const fs = __webpack_require__(5747);
+const path = __webpack_require__(5622);
+const mkdirp = __webpack_require__(596);
 function mkdirpPromise(folder) {
     return new Promise((resolve, reject) => {
         mkdirp(folder, (err, made) => {
@@ -3296,7 +3272,7 @@ function mkdirpPromise(folder) {
         });
     });
 }
-const logger_1 = __webpack_require__(/*! ./logger */ "./node_modules/vscode-debugadapter/lib/logger.js");
+const logger_1 = __webpack_require__(8741);
 /**
  * Manages logging, whether to console.log, file, or VS Code console.
  * Encapsulates the state specific to each logging session
@@ -3436,10 +3412,7 @@ function _padZeroes(minDesiredLength, numberToPad) {
 
 /***/ }),
 
-/***/ "./node_modules/vscode-debugadapter/lib/logger.js":
-/*!********************************************************!*\
-  !*** ./node_modules/vscode-debugadapter/lib/logger.js ***!
-  \********************************************************/
+/***/ 8741:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -3449,8 +3422,8 @@ function _padZeroes(minDesiredLength, numberToPad) {
  *--------------------------------------------------------*/
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.trimLastNewline = exports.LogOutputEvent = exports.logger = exports.Logger = exports.LogLevel = void 0;
-const internalLogger_1 = __webpack_require__(/*! ./internalLogger */ "./node_modules/vscode-debugadapter/lib/internalLogger.js");
-const debugSession_1 = __webpack_require__(/*! ./debugSession */ "./node_modules/vscode-debugadapter/lib/debugSession.js");
+const internalLogger_1 = __webpack_require__(2995);
+const debugSession_1 = __webpack_require__(6928);
 var LogLevel;
 (function (LogLevel) {
     LogLevel[LogLevel["Verbose"] = 0] = "Verbose";
@@ -3549,10 +3522,7 @@ exports.trimLastNewline = trimLastNewline;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-debugadapter/lib/loggingDebugSession.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/vscode-debugadapter/lib/loggingDebugSession.js ***!
-  \*********************************************************************/
+/***/ 2949:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -3563,9 +3533,9 @@ exports.trimLastNewline = trimLastNewline;
  *--------------------------------------------------------------------------------------------*/
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.LoggingDebugSession = void 0;
-const Logger = __webpack_require__(/*! ./logger */ "./node_modules/vscode-debugadapter/lib/logger.js");
+const Logger = __webpack_require__(8741);
 const logger = Logger.logger;
-const debugSession_1 = __webpack_require__(/*! ./debugSession */ "./node_modules/vscode-debugadapter/lib/debugSession.js");
+const debugSession_1 = __webpack_require__(6928);
 class LoggingDebugSession extends debugSession_1.DebugSession {
     constructor(obsolete_logFilePath, obsolete_debuggerLinesAndColumnsStartAt1, obsolete_isServer) {
         super(obsolete_debuggerLinesAndColumnsStartAt1, obsolete_isServer);
@@ -3618,10 +3588,7 @@ exports.LoggingDebugSession = LoggingDebugSession;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-debugadapter/lib/main.js":
-/*!******************************************************!*\
-  !*** ./node_modules/vscode-debugadapter/lib/main.js ***!
-  \******************************************************/
+/***/ 827:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -3632,7 +3599,7 @@ exports.LoggingDebugSession = LoggingDebugSession;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Handles = exports.Response = exports.Event = exports.ErrorDestination = exports.CompletionItem = exports.Module = exports.Source = exports.Breakpoint = exports.Variable = exports.Scope = exports.StackFrame = exports.Thread = exports.InvalidatedEvent = exports.ProgressEndEvent = exports.ProgressUpdateEvent = exports.ProgressStartEvent = exports.CapabilitiesEvent = exports.LoadedSourceEvent = exports.ModuleEvent = exports.BreakpointEvent = exports.ThreadEvent = exports.OutputEvent = exports.ContinuedEvent = exports.StoppedEvent = exports.TerminatedEvent = exports.InitializedEvent = exports.logger = exports.Logger = exports.LoggingDebugSession = exports.DebugSession = void 0;
-const debugSession_1 = __webpack_require__(/*! ./debugSession */ "./node_modules/vscode-debugadapter/lib/debugSession.js");
+const debugSession_1 = __webpack_require__(6928);
 Object.defineProperty(exports, "DebugSession", ({ enumerable: true, get: function () { return debugSession_1.DebugSession; } }));
 Object.defineProperty(exports, "InitializedEvent", ({ enumerable: true, get: function () { return debugSession_1.InitializedEvent; } }));
 Object.defineProperty(exports, "TerminatedEvent", ({ enumerable: true, get: function () { return debugSession_1.TerminatedEvent; } }));
@@ -3657,14 +3624,14 @@ Object.defineProperty(exports, "Source", ({ enumerable: true, get: function () {
 Object.defineProperty(exports, "Module", ({ enumerable: true, get: function () { return debugSession_1.Module; } }));
 Object.defineProperty(exports, "CompletionItem", ({ enumerable: true, get: function () { return debugSession_1.CompletionItem; } }));
 Object.defineProperty(exports, "ErrorDestination", ({ enumerable: true, get: function () { return debugSession_1.ErrorDestination; } }));
-const loggingDebugSession_1 = __webpack_require__(/*! ./loggingDebugSession */ "./node_modules/vscode-debugadapter/lib/loggingDebugSession.js");
+const loggingDebugSession_1 = __webpack_require__(2949);
 Object.defineProperty(exports, "LoggingDebugSession", ({ enumerable: true, get: function () { return loggingDebugSession_1.LoggingDebugSession; } }));
-const Logger = __webpack_require__(/*! ./logger */ "./node_modules/vscode-debugadapter/lib/logger.js");
+const Logger = __webpack_require__(8741);
 exports.Logger = Logger;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-debugadapter/lib/messages.js");
+const messages_1 = __webpack_require__(3777);
 Object.defineProperty(exports, "Event", ({ enumerable: true, get: function () { return messages_1.Event; } }));
 Object.defineProperty(exports, "Response", ({ enumerable: true, get: function () { return messages_1.Response; } }));
-const handles_1 = __webpack_require__(/*! ./handles */ "./node_modules/vscode-debugadapter/lib/handles.js");
+const handles_1 = __webpack_require__(3461);
 Object.defineProperty(exports, "Handles", ({ enumerable: true, get: function () { return handles_1.Handles; } }));
 const logger = Logger.logger;
 exports.logger = logger;
@@ -3672,10 +3639,7 @@ exports.logger = logger;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-debugadapter/lib/messages.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/vscode-debugadapter/lib/messages.js ***!
-  \**********************************************************/
+/***/ 3777:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3722,10 +3686,7 @@ exports.Event = Event;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-debugadapter/lib/protocol.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/vscode-debugadapter/lib/protocol.js ***!
-  \**********************************************************/
+/***/ 5399:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -3736,8 +3697,8 @@ exports.Event = Event;
  *--------------------------------------------------------------------------------------------*/
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ProtocolServer = void 0;
-const ee = __webpack_require__(/*! events */ "events");
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-debugadapter/lib/messages.js");
+const ee = __webpack_require__(8614);
+const messages_1 = __webpack_require__(3777);
 class Disposable0 {
     dispose() {
     }
@@ -3917,10 +3878,7 @@ ProtocolServer.TWO_CRLF = '\r\n\r\n';
 
 /***/ }),
 
-/***/ "./node_modules/vscode-debugadapter/lib/runDebugAdapter.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/vscode-debugadapter/lib/runDebugAdapter.js ***!
-  \*****************************************************************/
+/***/ 9182:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -3931,7 +3889,7 @@ ProtocolServer.TWO_CRLF = '\r\n\r\n';
  *--------------------------------------------------------------------------------------------*/
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.runDebugAdapter = void 0;
-const Net = __webpack_require__(/*! net */ "net");
+const Net = __webpack_require__(1631);
 function runDebugAdapter(debugSession) {
     // parse arguments
     let port = 0;
@@ -3970,10 +3928,7 @@ exports.runDebugAdapter = runDebugAdapter;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/api.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/api.js ***!
-  \*******************************************************/
+/***/ 3770:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -3986,7 +3941,7 @@ exports.runDebugAdapter = runDebugAdapter;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CancellationSenderStrategy = exports.CancellationReceiverStrategy = exports.ConnectionError = exports.ConnectionErrors = exports.LogTraceNotification = exports.SetTraceNotification = exports.TraceFormat = exports.Trace = exports.ProgressType = exports.createMessageConnection = exports.NullLogger = exports.ConnectionOptions = exports.ConnectionStrategy = exports.WriteableStreamMessageWriter = exports.AbstractMessageWriter = exports.MessageWriter = exports.ReadableStreamMessageReader = exports.AbstractMessageReader = exports.MessageReader = exports.CancellationToken = exports.CancellationTokenSource = exports.Emitter = exports.Event = exports.Disposable = exports.ParameterStructures = exports.NotificationType9 = exports.NotificationType8 = exports.NotificationType7 = exports.NotificationType6 = exports.NotificationType5 = exports.NotificationType4 = exports.NotificationType3 = exports.NotificationType2 = exports.NotificationType1 = exports.NotificationType0 = exports.NotificationType = exports.ErrorCodes = exports.ResponseError = exports.RequestType9 = exports.RequestType8 = exports.RequestType7 = exports.RequestType6 = exports.RequestType5 = exports.RequestType4 = exports.RequestType3 = exports.RequestType2 = exports.RequestType1 = exports.RequestType0 = exports.RequestType = exports.RAL = void 0;
 exports.CancellationStrategy = void 0;
-const messages_1 = __webpack_require__(/*! ../common/messages */ "./node_modules/vscode-jsonrpc/lib/common/messages.js");
+const messages_1 = __webpack_require__(6075);
 Object.defineProperty(exports, "RequestType", ({ enumerable: true, get: function () { return messages_1.RequestType; } }));
 Object.defineProperty(exports, "RequestType0", ({ enumerable: true, get: function () { return messages_1.RequestType0; } }));
 Object.defineProperty(exports, "RequestType1", ({ enumerable: true, get: function () { return messages_1.RequestType1; } }));
@@ -4012,23 +3967,23 @@ Object.defineProperty(exports, "NotificationType7", ({ enumerable: true, get: fu
 Object.defineProperty(exports, "NotificationType8", ({ enumerable: true, get: function () { return messages_1.NotificationType8; } }));
 Object.defineProperty(exports, "NotificationType9", ({ enumerable: true, get: function () { return messages_1.NotificationType9; } }));
 Object.defineProperty(exports, "ParameterStructures", ({ enumerable: true, get: function () { return messages_1.ParameterStructures; } }));
-const disposable_1 = __webpack_require__(/*! ../common/disposable */ "./node_modules/vscode-jsonrpc/lib/common/disposable.js");
+const disposable_1 = __webpack_require__(562);
 Object.defineProperty(exports, "Disposable", ({ enumerable: true, get: function () { return disposable_1.Disposable; } }));
-const events_1 = __webpack_require__(/*! ../common/events */ "./node_modules/vscode-jsonrpc/lib/common/events.js");
+const events_1 = __webpack_require__(9503);
 Object.defineProperty(exports, "Event", ({ enumerable: true, get: function () { return events_1.Event; } }));
 Object.defineProperty(exports, "Emitter", ({ enumerable: true, get: function () { return events_1.Emitter; } }));
-const cancellation_1 = __webpack_require__(/*! ../common/cancellation */ "./node_modules/vscode-jsonrpc/lib/common/cancellation.js");
+const cancellation_1 = __webpack_require__(5565);
 Object.defineProperty(exports, "CancellationTokenSource", ({ enumerable: true, get: function () { return cancellation_1.CancellationTokenSource; } }));
 Object.defineProperty(exports, "CancellationToken", ({ enumerable: true, get: function () { return cancellation_1.CancellationToken; } }));
-const messageReader_1 = __webpack_require__(/*! ../common/messageReader */ "./node_modules/vscode-jsonrpc/lib/common/messageReader.js");
+const messageReader_1 = __webpack_require__(9894);
 Object.defineProperty(exports, "MessageReader", ({ enumerable: true, get: function () { return messageReader_1.MessageReader; } }));
 Object.defineProperty(exports, "AbstractMessageReader", ({ enumerable: true, get: function () { return messageReader_1.AbstractMessageReader; } }));
 Object.defineProperty(exports, "ReadableStreamMessageReader", ({ enumerable: true, get: function () { return messageReader_1.ReadableStreamMessageReader; } }));
-const messageWriter_1 = __webpack_require__(/*! ../common/messageWriter */ "./node_modules/vscode-jsonrpc/lib/common/messageWriter.js");
+const messageWriter_1 = __webpack_require__(6810);
 Object.defineProperty(exports, "MessageWriter", ({ enumerable: true, get: function () { return messageWriter_1.MessageWriter; } }));
 Object.defineProperty(exports, "AbstractMessageWriter", ({ enumerable: true, get: function () { return messageWriter_1.AbstractMessageWriter; } }));
 Object.defineProperty(exports, "WriteableStreamMessageWriter", ({ enumerable: true, get: function () { return messageWriter_1.WriteableStreamMessageWriter; } }));
-const connection_1 = __webpack_require__(/*! ../common/connection */ "./node_modules/vscode-jsonrpc/lib/common/connection.js");
+const connection_1 = __webpack_require__(308);
 Object.defineProperty(exports, "ConnectionStrategy", ({ enumerable: true, get: function () { return connection_1.ConnectionStrategy; } }));
 Object.defineProperty(exports, "ConnectionOptions", ({ enumerable: true, get: function () { return connection_1.ConnectionOptions; } }));
 Object.defineProperty(exports, "NullLogger", ({ enumerable: true, get: function () { return connection_1.NullLogger; } }));
@@ -4043,16 +3998,13 @@ Object.defineProperty(exports, "ConnectionError", ({ enumerable: true, get: func
 Object.defineProperty(exports, "CancellationReceiverStrategy", ({ enumerable: true, get: function () { return connection_1.CancellationReceiverStrategy; } }));
 Object.defineProperty(exports, "CancellationSenderStrategy", ({ enumerable: true, get: function () { return connection_1.CancellationSenderStrategy; } }));
 Object.defineProperty(exports, "CancellationStrategy", ({ enumerable: true, get: function () { return connection_1.CancellationStrategy; } }));
-const ral_1 = __webpack_require__(/*! ./ral */ "./node_modules/vscode-jsonrpc/lib/common/ral.js");
+const ral_1 = __webpack_require__(865);
 exports.RAL = ral_1.default;
 //# sourceMappingURL=api.js.map
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/cancellation.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/cancellation.js ***!
-  \****************************************************************/
+/***/ 5565:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -4063,9 +4015,9 @@ exports.RAL = ral_1.default;
  *--------------------------------------------------------------------------------------------*/
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CancellationTokenSource = exports.CancellationToken = void 0;
-const ral_1 = __webpack_require__(/*! ./ral */ "./node_modules/vscode-jsonrpc/lib/common/ral.js");
-const Is = __webpack_require__(/*! ./is */ "./node_modules/vscode-jsonrpc/lib/common/is.js");
-const events_1 = __webpack_require__(/*! ./events */ "./node_modules/vscode-jsonrpc/lib/common/events.js");
+const ral_1 = __webpack_require__(865);
+const Is = __webpack_require__(4389);
+const events_1 = __webpack_require__(9503);
 var CancellationToken;
 (function (CancellationToken) {
     CancellationToken.None = Object.freeze({
@@ -4156,10 +4108,7 @@ exports.CancellationTokenSource = CancellationTokenSource;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/connection.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/connection.js ***!
-  \**************************************************************/
+/***/ 308:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -4170,12 +4119,12 @@ exports.CancellationTokenSource = CancellationTokenSource;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.createMessageConnection = exports.ConnectionOptions = exports.CancellationStrategy = exports.CancellationSenderStrategy = exports.CancellationReceiverStrategy = exports.ConnectionStrategy = exports.ConnectionError = exports.ConnectionErrors = exports.LogTraceNotification = exports.SetTraceNotification = exports.TraceFormat = exports.Trace = exports.NullLogger = exports.ProgressType = void 0;
-const ral_1 = __webpack_require__(/*! ./ral */ "./node_modules/vscode-jsonrpc/lib/common/ral.js");
-const Is = __webpack_require__(/*! ./is */ "./node_modules/vscode-jsonrpc/lib/common/is.js");
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-jsonrpc/lib/common/messages.js");
-const linkedMap_1 = __webpack_require__(/*! ./linkedMap */ "./node_modules/vscode-jsonrpc/lib/common/linkedMap.js");
-const events_1 = __webpack_require__(/*! ./events */ "./node_modules/vscode-jsonrpc/lib/common/events.js");
-const cancellation_1 = __webpack_require__(/*! ./cancellation */ "./node_modules/vscode-jsonrpc/lib/common/cancellation.js");
+const ral_1 = __webpack_require__(865);
+const Is = __webpack_require__(4389);
+const messages_1 = __webpack_require__(6075);
+const linkedMap_1 = __webpack_require__(1371);
+const events_1 = __webpack_require__(9503);
+const cancellation_1 = __webpack_require__(5565);
 var CancelNotification;
 (function (CancelNotification) {
     CancelNotification.type = new messages_1.NotificationType('$/cancelRequest');
@@ -5254,10 +5203,7 @@ exports.createMessageConnection = createMessageConnection;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/disposable.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/disposable.js ***!
-  \**************************************************************/
+/***/ 562:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5281,10 +5227,7 @@ var Disposable;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/events.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/events.js ***!
-  \**********************************************************/
+/***/ 9503:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -5295,7 +5238,7 @@ var Disposable;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Emitter = exports.Event = void 0;
-const ral_1 = __webpack_require__(/*! ./ral */ "./node_modules/vscode-jsonrpc/lib/common/ral.js");
+const ral_1 = __webpack_require__(865);
 var Event;
 (function (Event) {
     const _disposable = { dispose() { } };
@@ -5420,10 +5363,7 @@ Emitter._noop = function () { };
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/is.js":
-/*!******************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/is.js ***!
-  \******************************************************/
+/***/ 4389:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5466,10 +5406,7 @@ exports.stringArray = stringArray;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/linkedMap.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/linkedMap.js ***!
-  \*************************************************************/
+/***/ 1371:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5879,10 +5816,7 @@ exports.LRUCache = LRUCache;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/messageBuffer.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/messageBuffer.js ***!
-  \*****************************************************************/
+/***/ 7842:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -6042,10 +5976,7 @@ exports.AbstractMessageBuffer = AbstractMessageBuffer;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/messageReader.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/messageReader.js ***!
-  \*****************************************************************/
+/***/ 9894:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -6056,9 +5987,9 @@ exports.AbstractMessageBuffer = AbstractMessageBuffer;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ReadableStreamMessageReader = exports.AbstractMessageReader = exports.MessageReader = void 0;
-const ral_1 = __webpack_require__(/*! ./ral */ "./node_modules/vscode-jsonrpc/lib/common/ral.js");
-const Is = __webpack_require__(/*! ./is */ "./node_modules/vscode-jsonrpc/lib/common/is.js");
-const events_1 = __webpack_require__(/*! ./events */ "./node_modules/vscode-jsonrpc/lib/common/events.js");
+const ral_1 = __webpack_require__(865);
+const Is = __webpack_require__(4389);
+const events_1 = __webpack_require__(9503);
 var MessageReader;
 (function (MessageReader) {
     function is(value) {
@@ -6245,10 +6176,7 @@ exports.ReadableStreamMessageReader = ReadableStreamMessageReader;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/messageWriter.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/messageWriter.js ***!
-  \*****************************************************************/
+/***/ 6810:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -6259,10 +6187,10 @@ exports.ReadableStreamMessageReader = ReadableStreamMessageReader;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.WriteableStreamMessageWriter = exports.AbstractMessageWriter = exports.MessageWriter = void 0;
-const ral_1 = __webpack_require__(/*! ./ral */ "./node_modules/vscode-jsonrpc/lib/common/ral.js");
-const Is = __webpack_require__(/*! ./is */ "./node_modules/vscode-jsonrpc/lib/common/is.js");
-const semaphore_1 = __webpack_require__(/*! ./semaphore */ "./node_modules/vscode-jsonrpc/lib/common/semaphore.js");
-const events_1 = __webpack_require__(/*! ./events */ "./node_modules/vscode-jsonrpc/lib/common/events.js");
+const ral_1 = __webpack_require__(865);
+const Is = __webpack_require__(4389);
+const semaphore_1 = __webpack_require__(3898);
+const events_1 = __webpack_require__(9503);
 const ContentLength = 'Content-Length: ';
 const CRLF = '\r\n';
 var MessageWriter;
@@ -6372,10 +6300,7 @@ exports.WriteableStreamMessageWriter = WriteableStreamMessageWriter;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/messages.js":
-/*!************************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/messages.js ***!
-  \************************************************************/
+/***/ 6075:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -6386,7 +6311,7 @@ exports.WriteableStreamMessageWriter = WriteableStreamMessageWriter;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.isResponseMessage = exports.isNotificationMessage = exports.isRequestMessage = exports.NotificationType9 = exports.NotificationType8 = exports.NotificationType7 = exports.NotificationType6 = exports.NotificationType5 = exports.NotificationType4 = exports.NotificationType3 = exports.NotificationType2 = exports.NotificationType1 = exports.NotificationType0 = exports.NotificationType = exports.RequestType9 = exports.RequestType8 = exports.RequestType7 = exports.RequestType6 = exports.RequestType5 = exports.RequestType4 = exports.RequestType3 = exports.RequestType2 = exports.RequestType1 = exports.RequestType = exports.RequestType0 = exports.AbstractMessageSignature = exports.ParameterStructures = exports.ResponseError = exports.ErrorCodes = void 0;
-const is = __webpack_require__(/*! ./is */ "./node_modules/vscode-jsonrpc/lib/common/is.js");
+const is = __webpack_require__(4389);
 /**
  * Predefined error codes.
  */
@@ -6664,10 +6589,7 @@ exports.isResponseMessage = isResponseMessage;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/ral.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/ral.js ***!
-  \*******************************************************/
+/***/ 865:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -6698,10 +6620,7 @@ exports.default = RAL;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/common/semaphore.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/common/semaphore.js ***!
-  \*************************************************************/
+/***/ 3898:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -6712,7 +6631,7 @@ exports.default = RAL;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Semaphore = void 0;
-const ral_1 = __webpack_require__(/*! ./ral */ "./node_modules/vscode-jsonrpc/lib/common/ral.js");
+const ral_1 = __webpack_require__(865);
 class Semaphore {
     constructor(capacity = 1) {
         if (capacity <= 0) {
@@ -6777,10 +6696,7 @@ exports.Semaphore = Semaphore;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/node/main.js":
-/*!******************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/node/main.js ***!
-  \******************************************************/
+/***/ 5769:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -6801,15 +6717,15 @@ exports.createMessageConnection = exports.createServerSocketTransport = exports.
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License. See License.txt in the project root for license information.
  * ----------------------------------------------------------------------------------------- */
-const ril_1 = __webpack_require__(/*! ./ril */ "./node_modules/vscode-jsonrpc/lib/node/ril.js");
+const ril_1 = __webpack_require__(7677);
 // Install the node runtime abstract.
 ril_1.default.install();
-const api_1 = __webpack_require__(/*! ../common/api */ "./node_modules/vscode-jsonrpc/lib/common/api.js");
-const path = __webpack_require__(/*! path */ "path");
-const os = __webpack_require__(/*! os */ "os");
-const crypto_1 = __webpack_require__(/*! crypto */ "crypto");
-const net_1 = __webpack_require__(/*! net */ "net");
-__exportStar(__webpack_require__(/*! ../common/api */ "./node_modules/vscode-jsonrpc/lib/common/api.js"), exports);
+const api_1 = __webpack_require__(3770);
+const path = __webpack_require__(5622);
+const os = __webpack_require__(2087);
+const crypto_1 = __webpack_require__(6417);
+const net_1 = __webpack_require__(1631);
+__exportStar(__webpack_require__(3770), exports);
 class IPCMessageReader extends api_1.AbstractMessageReader {
     constructor(process) {
         super();
@@ -7000,10 +6916,7 @@ exports.createMessageConnection = createMessageConnection;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/lib/node/ril.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/lib/node/ril.js ***!
-  \*****************************************************/
+/***/ 7677:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -7013,10 +6926,10 @@ exports.createMessageConnection = createMessageConnection;
  * Licensed under the MIT License. See License.txt in the project root for license information.
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const ral_1 = __webpack_require__(/*! ../common/ral */ "./node_modules/vscode-jsonrpc/lib/common/ral.js");
-const util_1 = __webpack_require__(/*! util */ "util");
-const disposable_1 = __webpack_require__(/*! ../common/disposable */ "./node_modules/vscode-jsonrpc/lib/common/disposable.js");
-const messageBuffer_1 = __webpack_require__(/*! ../common/messageBuffer */ "./node_modules/vscode-jsonrpc/lib/common/messageBuffer.js");
+const ral_1 = __webpack_require__(865);
+const util_1 = __webpack_require__(1669);
+const disposable_1 = __webpack_require__(562);
+const messageBuffer_1 = __webpack_require__(7842);
 class MessageBuffer extends messageBuffer_1.AbstractMessageBuffer {
     constructor(encoding = 'utf-8') {
         super(encoding);
@@ -7174,10 +7087,7 @@ exports.default = RIL;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-jsonrpc/node.js":
-/*!*********************************************!*\
-  !*** ./node_modules/vscode-jsonrpc/node.js ***!
-  \*********************************************/
+/***/ 7689:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -7187,14 +7097,11 @@ exports.default = RIL;
  * ----------------------------------------------------------------------------------------- */
 
 
-module.exports = __webpack_require__(/*! ./lib/node/main */ "./node_modules/vscode-jsonrpc/lib/node/main.js");
+module.exports = __webpack_require__(5769);
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/api.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/api.js ***!
-  \**************************************************************/
+/***/ 9465:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -7214,17 +7121,14 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-__exportStar(__webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js"), exports);
-__exportStar(__webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js"), exports);
-__exportStar(__webpack_require__(/*! ./commonClient */ "./node_modules/vscode-languageclient/lib/common/commonClient.js"), exports);
+__exportStar(__webpack_require__(9473), exports);
+__exportStar(__webpack_require__(8072), exports);
+__exportStar(__webpack_require__(9243), exports);
 //# sourceMappingURL=api.js.map
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/callHierarchy.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/callHierarchy.js ***!
-  \************************************************************************/
+/***/ 7209:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -7235,9 +7139,9 @@ __exportStar(__webpack_require__(/*! ./commonClient */ "./node_modules/vscode-la
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CallHierarchyFeature = void 0;
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const client_1 = __webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js");
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const client_1 = __webpack_require__(8072);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = {};
@@ -7326,10 +7230,7 @@ exports.CallHierarchyFeature = CallHierarchyFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/client.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/client.js ***!
-  \*****************************************************************/
+/***/ 8072:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -7340,15 +7241,15 @@ exports.CallHierarchyFeature = CallHierarchyFeature;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.BaseLanguageClient = exports.MessageTransports = exports.TextDocumentFeature = exports.State = exports.RevealOutputChannelOn = exports.CloseAction = exports.ErrorAction = void 0;
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const configuration_1 = __webpack_require__(/*! ./configuration */ "./node_modules/vscode-languageclient/lib/common/configuration.js");
-const c2p = __webpack_require__(/*! ./codeConverter */ "./node_modules/vscode-languageclient/lib/common/codeConverter.js");
-const p2c = __webpack_require__(/*! ./protocolConverter */ "./node_modules/vscode-languageclient/lib/common/protocolConverter.js");
-const Is = __webpack_require__(/*! ./utils/is */ "./node_modules/vscode-languageclient/lib/common/utils/is.js");
-const async_1 = __webpack_require__(/*! ./utils/async */ "./node_modules/vscode-languageclient/lib/common/utils/async.js");
-const UUID = __webpack_require__(/*! ./utils/uuid */ "./node_modules/vscode-languageclient/lib/common/utils/uuid.js");
-const progressPart_1 = __webpack_require__(/*! ./progressPart */ "./node_modules/vscode-languageclient/lib/common/progressPart.js");
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const configuration_1 = __webpack_require__(4341);
+const c2p = __webpack_require__(3509);
+const p2c = __webpack_require__(3562);
+const Is = __webpack_require__(9039);
+const async_1 = __webpack_require__(2882);
+const UUID = __webpack_require__(9664);
+const progressPart_1 = __webpack_require__(4916);
 class ConsoleLogger {
     error(message) {
         vscode_languageserver_protocol_1.RAL().console.error(message);
@@ -10009,10 +9910,7 @@ BaseLanguageClient.Canceled = 'Canceled';
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/codeConverter.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/codeConverter.js ***!
-  \************************************************************************/
+/***/ 3509:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -10023,16 +9921,16 @@ BaseLanguageClient.Canceled = 'Canceled';
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.createConverter = void 0;
-const code = __webpack_require__(/*! vscode */ "vscode");
-const proto = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const Is = __webpack_require__(/*! ./utils/is */ "./node_modules/vscode-languageclient/lib/common/utils/is.js");
-const protocolCompletionItem_1 = __webpack_require__(/*! ./protocolCompletionItem */ "./node_modules/vscode-languageclient/lib/common/protocolCompletionItem.js");
-const protocolCodeLens_1 = __webpack_require__(/*! ./protocolCodeLens */ "./node_modules/vscode-languageclient/lib/common/protocolCodeLens.js");
-const protocolDocumentLink_1 = __webpack_require__(/*! ./protocolDocumentLink */ "./node_modules/vscode-languageclient/lib/common/protocolDocumentLink.js");
-const protocolCodeAction_1 = __webpack_require__(/*! ./protocolCodeAction */ "./node_modules/vscode-languageclient/lib/common/protocolCodeAction.js");
-const protocolDiagnostic_1 = __webpack_require__(/*! ./protocolDiagnostic */ "./node_modules/vscode-languageclient/lib/common/protocolDiagnostic.js");
-const protocolCallHierarchyItem_1 = __webpack_require__(/*! ./protocolCallHierarchyItem */ "./node_modules/vscode-languageclient/lib/common/protocolCallHierarchyItem.js");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
+const code = __webpack_require__(7549);
+const proto = __webpack_require__(9473);
+const Is = __webpack_require__(9039);
+const protocolCompletionItem_1 = __webpack_require__(4777);
+const protocolCodeLens_1 = __webpack_require__(9642);
+const protocolDocumentLink_1 = __webpack_require__(4932);
+const protocolCodeAction_1 = __webpack_require__(4468);
+const protocolDiagnostic_1 = __webpack_require__(3695);
+const protocolCallHierarchyItem_1 = __webpack_require__(6918);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
 var InsertReplaceRange;
 (function (InsertReplaceRange) {
     function is(value) {
@@ -10722,10 +10620,7 @@ exports.createConverter = createConverter;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/colorProvider.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/colorProvider.js ***!
-  \************************************************************************/
+/***/ 2296:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -10736,9 +10631,9 @@ exports.createConverter = createConverter;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ColorProviderFeature = void 0;
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const client_1 = __webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js");
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const client_1 = __webpack_require__(8072);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = {};
@@ -10824,10 +10719,7 @@ exports.ColorProviderFeature = ColorProviderFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/commonClient.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/commonClient.js ***!
-  \***********************************************************************/
+/***/ 9243:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -10838,20 +10730,20 @@ exports.ColorProviderFeature = ColorProviderFeature;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ProposedFeatures = exports.CommonLanguageClient = void 0;
-const client_1 = __webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js");
-const colorProvider_1 = __webpack_require__(/*! ./colorProvider */ "./node_modules/vscode-languageclient/lib/common/colorProvider.js");
-const configuration_1 = __webpack_require__(/*! ./configuration */ "./node_modules/vscode-languageclient/lib/common/configuration.js");
-const implementation_1 = __webpack_require__(/*! ./implementation */ "./node_modules/vscode-languageclient/lib/common/implementation.js");
-const typeDefinition_1 = __webpack_require__(/*! ./typeDefinition */ "./node_modules/vscode-languageclient/lib/common/typeDefinition.js");
-const workspaceFolders_1 = __webpack_require__(/*! ./workspaceFolders */ "./node_modules/vscode-languageclient/lib/common/workspaceFolders.js");
-const foldingRange_1 = __webpack_require__(/*! ./foldingRange */ "./node_modules/vscode-languageclient/lib/common/foldingRange.js");
-const declaration_1 = __webpack_require__(/*! ./declaration */ "./node_modules/vscode-languageclient/lib/common/declaration.js");
-const selectionRange_1 = __webpack_require__(/*! ./selectionRange */ "./node_modules/vscode-languageclient/lib/common/selectionRange.js");
-const progress_1 = __webpack_require__(/*! ./progress */ "./node_modules/vscode-languageclient/lib/common/progress.js");
-const callHierarchy_1 = __webpack_require__(/*! ./callHierarchy */ "./node_modules/vscode-languageclient/lib/common/callHierarchy.js");
-const semanticTokens_1 = __webpack_require__(/*! ./semanticTokens */ "./node_modules/vscode-languageclient/lib/common/semanticTokens.js");
-const fileOperations_1 = __webpack_require__(/*! ./fileOperations */ "./node_modules/vscode-languageclient/lib/common/fileOperations.js");
-const linkedEditingRange_1 = __webpack_require__(/*! ./linkedEditingRange */ "./node_modules/vscode-languageclient/lib/common/linkedEditingRange.js");
+const client_1 = __webpack_require__(8072);
+const colorProvider_1 = __webpack_require__(2296);
+const configuration_1 = __webpack_require__(4341);
+const implementation_1 = __webpack_require__(5733);
+const typeDefinition_1 = __webpack_require__(5373);
+const workspaceFolders_1 = __webpack_require__(5359);
+const foldingRange_1 = __webpack_require__(9089);
+const declaration_1 = __webpack_require__(386);
+const selectionRange_1 = __webpack_require__(8567);
+const progress_1 = __webpack_require__(1783);
+const callHierarchy_1 = __webpack_require__(7209);
+const semanticTokens_1 = __webpack_require__(2257);
+const fileOperations_1 = __webpack_require__(504);
+const linkedEditingRange_1 = __webpack_require__(3574);
 class CommonLanguageClient extends client_1.BaseLanguageClient {
     constructor(id, name, clientOptions) {
         super(id, name, clientOptions);
@@ -10895,10 +10787,7 @@ var ProposedFeatures;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/configuration.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/configuration.js ***!
-  \************************************************************************/
+/***/ 4341:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -10909,8 +10798,8 @@ var ProposedFeatures;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.toJSONObject = exports.ConfigurationFeature = void 0;
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
 class ConfigurationFeature {
     constructor(_client) {
         this._client = _client;
@@ -10990,10 +10879,7 @@ exports.toJSONObject = toJSONObject;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/declaration.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/declaration.js ***!
-  \**********************************************************************/
+/***/ 386:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11004,9 +10890,9 @@ exports.toJSONObject = toJSONObject;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DeclarationFeature = void 0;
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const client_1 = __webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js");
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const client_1 = __webpack_require__(8072);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = {};
@@ -11052,10 +10938,7 @@ exports.DeclarationFeature = DeclarationFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/fileOperations.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/fileOperations.js ***!
-  \*************************************************************************/
+/***/ 504:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11066,10 +10949,10 @@ exports.DeclarationFeature = DeclarationFeature;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.WillDeleteFilesFeature = exports.WillRenameFilesFeature = exports.WillCreateFilesFeature = exports.DidDeleteFilesFeature = exports.DidRenameFilesFeature = exports.DidCreateFilesFeature = void 0;
-const code = __webpack_require__(/*! vscode */ "vscode");
-const minimatch = __webpack_require__(/*! minimatch */ "./node_modules/minimatch/minimatch.js");
-const proto = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const UUID = __webpack_require__(/*! ./utils/uuid */ "./node_modules/vscode-languageclient/lib/common/utils/uuid.js");
+const code = __webpack_require__(7549);
+const minimatch = __webpack_require__(5076);
+const proto = __webpack_require__(9473);
+const UUID = __webpack_require__(9664);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = {};
@@ -11326,10 +11209,7 @@ exports.WillDeleteFilesFeature = WillDeleteFilesFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/foldingRange.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/foldingRange.js ***!
-  \***********************************************************************/
+/***/ 9089:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11340,9 +11220,9 @@ exports.WillDeleteFilesFeature = WillDeleteFilesFeature;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.FoldingRangeFeature = void 0;
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const client_1 = __webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js");
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const client_1 = __webpack_require__(8072);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = {};
@@ -11413,10 +11293,7 @@ exports.FoldingRangeFeature = FoldingRangeFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/implementation.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/implementation.js ***!
-  \*************************************************************************/
+/***/ 5733:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11427,9 +11304,9 @@ exports.FoldingRangeFeature = FoldingRangeFeature;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ImplementationFeature = void 0;
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const client_1 = __webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js");
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const client_1 = __webpack_require__(8072);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = {};
@@ -11475,10 +11352,7 @@ exports.ImplementationFeature = ImplementationFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/linkedEditingRange.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/linkedEditingRange.js ***!
-  \*****************************************************************************/
+/***/ 3574:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11490,9 +11364,9 @@ exports.ImplementationFeature = ImplementationFeature;
 /// <reference path="../../typings/vscode-proposed.d.ts" />
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.LinkedEditingFeature = void 0;
-const code = __webpack_require__(/*! vscode */ "vscode");
-const proto = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const client_1 = __webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js");
+const code = __webpack_require__(7549);
+const proto = __webpack_require__(9473);
+const client_1 = __webpack_require__(8072);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = {};
@@ -11537,10 +11411,7 @@ exports.LinkedEditingFeature = LinkedEditingFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/progress.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/progress.js ***!
-  \*******************************************************************/
+/***/ 1783:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11551,8 +11422,8 @@ exports.LinkedEditingFeature = LinkedEditingFeature;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ProgressFeature = void 0;
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const progressPart_1 = __webpack_require__(/*! ./progressPart */ "./node_modules/vscode-languageclient/lib/common/progressPart.js");
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const progressPart_1 = __webpack_require__(4916);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = Object.create(null);
@@ -11589,10 +11460,7 @@ exports.ProgressFeature = ProgressFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/progressPart.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/progressPart.js ***!
-  \***********************************************************************/
+/***/ 4916:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11603,9 +11471,9 @@ exports.ProgressFeature = ProgressFeature;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ProgressPart = void 0;
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const Is = __webpack_require__(/*! ./utils/is */ "./node_modules/vscode-languageclient/lib/common/utils/is.js");
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const Is = __webpack_require__(9039);
 class ProgressPart {
     constructor(_client, _token, done) {
         this._client = _client;
@@ -11681,10 +11549,7 @@ exports.ProgressPart = ProgressPart;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/protocolCallHierarchyItem.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/protocolCallHierarchyItem.js ***!
-  \************************************************************************************/
+/***/ 6918:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11694,7 +11559,7 @@ exports.ProgressPart = ProgressPart;
  * Licensed under the MIT License. See License.txt in the project root for license information.
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const code = __webpack_require__(/*! vscode */ "vscode");
+const code = __webpack_require__(7549);
 class ProtocolCallHierarchyItem extends code.CallHierarchyItem {
     constructor(kind, name, detail, uri, range, selectionRange, data) {
         super(kind, name, detail, uri, range, selectionRange);
@@ -11708,10 +11573,7 @@ exports.default = ProtocolCallHierarchyItem;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/protocolCodeAction.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/protocolCodeAction.js ***!
-  \*****************************************************************************/
+/***/ 4468:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11721,7 +11583,7 @@ exports.default = ProtocolCallHierarchyItem;
  * Licensed under the MIT License. See License.txt in the project root for license information.
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const vscode = __webpack_require__(/*! vscode */ "vscode");
+const vscode = __webpack_require__(7549);
 class ProtocolCodeAction extends vscode.CodeAction {
     constructor(title, data) {
         super(title);
@@ -11733,10 +11595,7 @@ exports.default = ProtocolCodeAction;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/protocolCodeLens.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/protocolCodeLens.js ***!
-  \***************************************************************************/
+/***/ 9642:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11746,7 +11605,7 @@ exports.default = ProtocolCodeAction;
  * Licensed under the MIT License. See License.txt in the project root for license information.
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const code = __webpack_require__(/*! vscode */ "vscode");
+const code = __webpack_require__(7549);
 class ProtocolCodeLens extends code.CodeLens {
     constructor(range) {
         super(range);
@@ -11757,10 +11616,7 @@ exports.default = ProtocolCodeLens;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/protocolCompletionItem.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/protocolCompletionItem.js ***!
-  \*********************************************************************************/
+/***/ 4777:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11770,7 +11626,7 @@ exports.default = ProtocolCodeLens;
  * Licensed under the MIT License. See License.txt in the project root for license information.
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const code = __webpack_require__(/*! vscode */ "vscode");
+const code = __webpack_require__(7549);
 class ProtocolCompletionItem extends code.CompletionItem {
     constructor(label) {
         super(label);
@@ -11781,10 +11637,7 @@ exports.default = ProtocolCompletionItem;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/protocolConverter.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/protocolConverter.js ***!
-  \****************************************************************************/
+/***/ 3562:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -11796,16 +11649,16 @@ exports.default = ProtocolCompletionItem;
 /// <reference path="../../typings/vscode-proposed.d.ts" />
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.createConverter = void 0;
-const code = __webpack_require__(/*! vscode */ "vscode");
-const ls = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const Is = __webpack_require__(/*! ./utils/is */ "./node_modules/vscode-languageclient/lib/common/utils/is.js");
-const protocolCompletionItem_1 = __webpack_require__(/*! ./protocolCompletionItem */ "./node_modules/vscode-languageclient/lib/common/protocolCompletionItem.js");
-const protocolCodeLens_1 = __webpack_require__(/*! ./protocolCodeLens */ "./node_modules/vscode-languageclient/lib/common/protocolCodeLens.js");
-const protocolDocumentLink_1 = __webpack_require__(/*! ./protocolDocumentLink */ "./node_modules/vscode-languageclient/lib/common/protocolDocumentLink.js");
-const protocolCodeAction_1 = __webpack_require__(/*! ./protocolCodeAction */ "./node_modules/vscode-languageclient/lib/common/protocolCodeAction.js");
-const protocolDiagnostic_1 = __webpack_require__(/*! ./protocolDiagnostic */ "./node_modules/vscode-languageclient/lib/common/protocolDiagnostic.js");
-const protocolCallHierarchyItem_1 = __webpack_require__(/*! ./protocolCallHierarchyItem */ "./node_modules/vscode-languageclient/lib/common/protocolCallHierarchyItem.js");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
+const code = __webpack_require__(7549);
+const ls = __webpack_require__(9473);
+const Is = __webpack_require__(9039);
+const protocolCompletionItem_1 = __webpack_require__(4777);
+const protocolCodeLens_1 = __webpack_require__(9642);
+const protocolDocumentLink_1 = __webpack_require__(4932);
+const protocolCodeAction_1 = __webpack_require__(4468);
+const protocolDiagnostic_1 = __webpack_require__(3695);
+const protocolCallHierarchyItem_1 = __webpack_require__(6918);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
 var CodeBlock;
 (function (CodeBlock) {
     function is(value) {
@@ -12695,10 +12548,7 @@ exports.createConverter = createConverter;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/protocolDiagnostic.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/protocolDiagnostic.js ***!
-  \*****************************************************************************/
+/***/ 3695:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -12709,8 +12559,8 @@ exports.createConverter = createConverter;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ProtocolDiagnostic = exports.DiagnosticCode = void 0;
-const vscode = __webpack_require__(/*! vscode */ "vscode");
-const Is = __webpack_require__(/*! ./utils/is */ "./node_modules/vscode-languageclient/lib/common/utils/is.js");
+const vscode = __webpack_require__(7549);
+const Is = __webpack_require__(9039);
 var DiagnosticCode;
 (function (DiagnosticCode) {
     function is(value) {
@@ -12731,10 +12581,7 @@ exports.ProtocolDiagnostic = ProtocolDiagnostic;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/protocolDocumentLink.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/protocolDocumentLink.js ***!
-  \*******************************************************************************/
+/***/ 4932:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -12744,7 +12591,7 @@ exports.ProtocolDiagnostic = ProtocolDiagnostic;
  * Licensed under the MIT License. See License.txt in the project root for license information.
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const code = __webpack_require__(/*! vscode */ "vscode");
+const code = __webpack_require__(7549);
 class ProtocolDocumentLink extends code.DocumentLink {
     constructor(range, target) {
         super(range, target);
@@ -12755,10 +12602,7 @@ exports.default = ProtocolDocumentLink;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/selectionRange.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/selectionRange.js ***!
-  \*************************************************************************/
+/***/ 8567:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -12769,9 +12613,9 @@ exports.default = ProtocolDocumentLink;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SelectionRangeFeature = void 0;
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const client_1 = __webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js");
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const client_1 = __webpack_require__(8072);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = Object.create(null);
@@ -12820,10 +12664,7 @@ exports.SelectionRangeFeature = SelectionRangeFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/semanticTokens.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/semanticTokens.js ***!
-  \*************************************************************************/
+/***/ 2257:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -12834,10 +12675,10 @@ exports.SelectionRangeFeature = SelectionRangeFeature;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SemanticTokensFeature = void 0;
-const vscode = __webpack_require__(/*! vscode */ "vscode");
-const client_1 = __webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const Is = __webpack_require__(/*! ./utils/is */ "./node_modules/vscode-languageclient/lib/common/utils/is.js");
+const vscode = __webpack_require__(7549);
+const client_1 = __webpack_require__(8072);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const Is = __webpack_require__(9039);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = {};
@@ -13002,10 +12843,7 @@ exports.SemanticTokensFeature = SemanticTokensFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/typeDefinition.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/typeDefinition.js ***!
-  \*************************************************************************/
+/***/ 5373:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -13016,9 +12854,9 @@ exports.SemanticTokensFeature = SemanticTokensFeature;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.TypeDefinitionFeature = void 0;
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
-const client_1 = __webpack_require__(/*! ./client */ "./node_modules/vscode-languageclient/lib/common/client.js");
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
+const client_1 = __webpack_require__(8072);
 function ensure(target, key) {
     if (target[key] === void 0) {
         target[key] = {};
@@ -13065,10 +12903,7 @@ exports.TypeDefinitionFeature = TypeDefinitionFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/utils/async.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/utils/async.js ***!
-  \**********************************************************************/
+/***/ 2882:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -13079,7 +12914,7 @@ exports.TypeDefinitionFeature = TypeDefinitionFeature;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Delayer = void 0;
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
 class Delayer {
     constructor(defaultDelay) {
         this.defaultDelay = defaultDelay;
@@ -13142,10 +12977,7 @@ exports.Delayer = Delayer;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/utils/is.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/utils/is.js ***!
-  \*******************************************************************/
+/***/ 9039:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -13210,10 +13042,7 @@ exports.asPromise = asPromise;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/utils/uuid.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/utils/uuid.js ***!
-  \*********************************************************************/
+/***/ 9664:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -13318,10 +13147,7 @@ exports.generateUuid = generateUuid;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/common/workspaceFolders.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/common/workspaceFolders.js ***!
-  \***************************************************************************/
+/***/ 5359:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -13332,9 +13158,9 @@ exports.generateUuid = generateUuid;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.WorkspaceFoldersFeature = exports.arrayDiff = void 0;
-const UUID = __webpack_require__(/*! ./utils/uuid */ "./node_modules/vscode-languageclient/lib/common/utils/uuid.js");
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const vscode_languageserver_protocol_1 = __webpack_require__(/*! vscode-languageserver-protocol */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
+const UUID = __webpack_require__(9664);
+const vscode_1 = __webpack_require__(7549);
+const vscode_languageserver_protocol_1 = __webpack_require__(9473);
 function access(target, key) {
     if (target === void 0) {
         return undefined;
@@ -13465,10 +13291,7 @@ exports.WorkspaceFoldersFeature = WorkspaceFoldersFeature;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/node/main.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/node/main.js ***!
-  \*************************************************************/
+/***/ 8873:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -13489,18 +13312,18 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SettingMonitor = exports.LanguageClient = exports.TransportKind = void 0;
-const cp = __webpack_require__(/*! child_process */ "child_process");
-const fs = __webpack_require__(/*! fs */ "fs");
-const path = __webpack_require__(/*! path */ "path");
-const SemVer = __webpack_require__(/*! semver */ "./node_modules/vscode-languageclient/node_modules/semver/index.js");
-const vscode_1 = __webpack_require__(/*! vscode */ "vscode");
-const Is = __webpack_require__(/*! ../common/utils/is */ "./node_modules/vscode-languageclient/lib/common/utils/is.js");
-const commonClient_1 = __webpack_require__(/*! ../common/commonClient */ "./node_modules/vscode-languageclient/lib/common/commonClient.js");
-const client_1 = __webpack_require__(/*! ../common/client */ "./node_modules/vscode-languageclient/lib/common/client.js");
-const processes_1 = __webpack_require__(/*! ./processes */ "./node_modules/vscode-languageclient/lib/node/processes.js");
-const node_1 = __webpack_require__(/*! vscode-languageserver-protocol/node */ "./node_modules/vscode-languageserver-protocol/node.js");
-__exportStar(__webpack_require__(/*! vscode-languageserver-protocol/node */ "./node_modules/vscode-languageserver-protocol/node.js"), exports);
-__exportStar(__webpack_require__(/*! ../common/api */ "./node_modules/vscode-languageclient/lib/common/api.js"), exports);
+const cp = __webpack_require__(3129);
+const fs = __webpack_require__(5747);
+const path = __webpack_require__(5622);
+const SemVer = __webpack_require__(7089);
+const vscode_1 = __webpack_require__(7549);
+const Is = __webpack_require__(9039);
+const commonClient_1 = __webpack_require__(9243);
+const client_1 = __webpack_require__(8072);
+const processes_1 = __webpack_require__(8886);
+const node_1 = __webpack_require__(2090);
+__exportStar(__webpack_require__(2090), exports);
+__exportStar(__webpack_require__(9465), exports);
 const REQUIRED_VSCODE_VERSION = '^1.52.0'; // do not change format, updated by `updateVSCode` script
 var Executable;
 (function (Executable) {
@@ -13964,10 +13787,7 @@ exports.SettingMonitor = SettingMonitor;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/lib/node/processes.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/lib/node/processes.js ***!
-  \******************************************************************/
+/***/ 8886:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -13978,8 +13798,8 @@ exports.SettingMonitor = SettingMonitor;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.terminate = void 0;
-const cp = __webpack_require__(/*! child_process */ "child_process");
-const path_1 = __webpack_require__(/*! path */ "path");
+const cp = __webpack_require__(3129);
+const path_1 = __webpack_require__(5622);
 const isWindows = (process.platform === 'win32');
 const isMacintosh = (process.platform === 'darwin');
 const isLinux = (process.platform === 'linux');
@@ -14022,10 +13842,7 @@ exports.terminate = terminate;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node.js":
-/*!****************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node.js ***!
-  \****************************************************/
+/***/ 6749:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -14035,21 +13852,18 @@ exports.terminate = terminate;
  * ----------------------------------------------------------------------------------------- */
 
 
-module.exports = __webpack_require__(/*! ./lib/node/main */ "./node_modules/vscode-languageclient/lib/node/main.js");
+module.exports = __webpack_require__(8873);
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/lru-cache/index.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/lru-cache/index.js ***!
-  \****************************************************************************/
+/***/ 6689:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
 
 // A linked list to keep track of recently-used-ness
-const Yallist = __webpack_require__(/*! yallist */ "./node_modules/vscode-languageclient/node_modules/yallist/yallist.js")
+const Yallist = __webpack_require__(6869)
 
 const MAX = Symbol('max')
 const LENGTH = Symbol('length')
@@ -14384,10 +14198,7 @@ module.exports = LRUCache
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/classes/comparator.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/classes/comparator.js ***!
-  \**************************************************************************************/
+/***/ 873:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 const ANY = Symbol('SemVer ANY')
@@ -14519,20 +14330,17 @@ class Comparator {
 
 module.exports = Comparator
 
-const parseOptions = __webpack_require__(/*! ../internal/parse-options */ "./node_modules/vscode-languageclient/node_modules/semver/internal/parse-options.js")
-const {re, t} = __webpack_require__(/*! ../internal/re */ "./node_modules/vscode-languageclient/node_modules/semver/internal/re.js")
-const cmp = __webpack_require__(/*! ../functions/cmp */ "./node_modules/vscode-languageclient/node_modules/semver/functions/cmp.js")
-const debug = __webpack_require__(/*! ../internal/debug */ "./node_modules/vscode-languageclient/node_modules/semver/internal/debug.js")
-const SemVer = __webpack_require__(/*! ./semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
-const Range = __webpack_require__(/*! ./range */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js")
+const parseOptions = __webpack_require__(9984)
+const {re, t} = __webpack_require__(9886)
+const cmp = __webpack_require__(2231)
+const debug = __webpack_require__(9814)
+const SemVer = __webpack_require__(1538)
+const Range = __webpack_require__(2149)
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/classes/range.js ***!
-  \*********************************************************************************/
+/***/ 2149:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // hoisted class for cyclic dependency
@@ -14721,20 +14529,20 @@ class Range {
 }
 module.exports = Range
 
-const LRU = __webpack_require__(/*! lru-cache */ "./node_modules/vscode-languageclient/node_modules/lru-cache/index.js")
+const LRU = __webpack_require__(6689)
 const cache = new LRU({ max: 1000 })
 
-const parseOptions = __webpack_require__(/*! ../internal/parse-options */ "./node_modules/vscode-languageclient/node_modules/semver/internal/parse-options.js")
-const Comparator = __webpack_require__(/*! ./comparator */ "./node_modules/vscode-languageclient/node_modules/semver/classes/comparator.js")
-const debug = __webpack_require__(/*! ../internal/debug */ "./node_modules/vscode-languageclient/node_modules/semver/internal/debug.js")
-const SemVer = __webpack_require__(/*! ./semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
+const parseOptions = __webpack_require__(9984)
+const Comparator = __webpack_require__(873)
+const debug = __webpack_require__(9814)
+const SemVer = __webpack_require__(1538)
 const {
   re,
   t,
   comparatorTrimReplace,
   tildeTrimReplace,
   caretTrimReplace
-} = __webpack_require__(/*! ../internal/re */ "./node_modules/vscode-languageclient/node_modules/semver/internal/re.js")
+} = __webpack_require__(9886)
 
 const isNullSet = c => c.value === '<0.0.0-0'
 const isAny = c => c.value === ''
@@ -15049,18 +14857,15 @@ const testSet = (set, version, options) => {
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js ***!
-  \**********************************************************************************/
+/***/ 1538:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const debug = __webpack_require__(/*! ../internal/debug */ "./node_modules/vscode-languageclient/node_modules/semver/internal/debug.js")
-const { MAX_LENGTH, MAX_SAFE_INTEGER } = __webpack_require__(/*! ../internal/constants */ "./node_modules/vscode-languageclient/node_modules/semver/internal/constants.js")
-const { re, t } = __webpack_require__(/*! ../internal/re */ "./node_modules/vscode-languageclient/node_modules/semver/internal/re.js")
+const debug = __webpack_require__(9814)
+const { MAX_LENGTH, MAX_SAFE_INTEGER } = __webpack_require__(5526)
+const { re, t } = __webpack_require__(9886)
 
-const parseOptions = __webpack_require__(/*! ../internal/parse-options */ "./node_modules/vscode-languageclient/node_modules/semver/internal/parse-options.js")
-const { compareIdentifiers } = __webpack_require__(/*! ../internal/identifiers */ "./node_modules/vscode-languageclient/node_modules/semver/internal/identifiers.js")
+const parseOptions = __webpack_require__(9984)
+const { compareIdentifiers } = __webpack_require__(3085)
 class SemVer {
   constructor (version, options) {
     options = parseOptions(options)
@@ -15346,13 +15151,10 @@ module.exports = SemVer
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/clean.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/clean.js ***!
-  \***********************************************************************************/
+/***/ 3936:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const parse = __webpack_require__(/*! ./parse */ "./node_modules/vscode-languageclient/node_modules/semver/functions/parse.js")
+const parse = __webpack_require__(9836)
 const clean = (version, options) => {
   const s = parse(version.trim().replace(/^[=v]+/, ''), options)
   return s ? s.version : null
@@ -15362,18 +15164,15 @@ module.exports = clean
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/cmp.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/cmp.js ***!
-  \*********************************************************************************/
+/***/ 2231:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const eq = __webpack_require__(/*! ./eq */ "./node_modules/vscode-languageclient/node_modules/semver/functions/eq.js")
-const neq = __webpack_require__(/*! ./neq */ "./node_modules/vscode-languageclient/node_modules/semver/functions/neq.js")
-const gt = __webpack_require__(/*! ./gt */ "./node_modules/vscode-languageclient/node_modules/semver/functions/gt.js")
-const gte = __webpack_require__(/*! ./gte */ "./node_modules/vscode-languageclient/node_modules/semver/functions/gte.js")
-const lt = __webpack_require__(/*! ./lt */ "./node_modules/vscode-languageclient/node_modules/semver/functions/lt.js")
-const lte = __webpack_require__(/*! ./lte */ "./node_modules/vscode-languageclient/node_modules/semver/functions/lte.js")
+const eq = __webpack_require__(6282)
+const neq = __webpack_require__(3193)
+const gt = __webpack_require__(1402)
+const gte = __webpack_require__(2392)
+const lt = __webpack_require__(3638)
+const lte = __webpack_require__(7566)
 
 const cmp = (a, op, b, loose) => {
   switch (op) {
@@ -15420,15 +15219,12 @@ module.exports = cmp
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/coerce.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/coerce.js ***!
-  \************************************************************************************/
+/***/ 1881:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
-const parse = __webpack_require__(/*! ./parse */ "./node_modules/vscode-languageclient/node_modules/semver/functions/parse.js")
-const {re, t} = __webpack_require__(/*! ../internal/re */ "./node_modules/vscode-languageclient/node_modules/semver/internal/re.js")
+const SemVer = __webpack_require__(1538)
+const parse = __webpack_require__(9836)
+const {re, t} = __webpack_require__(9886)
 
 const coerce = (version, options) => {
   if (version instanceof SemVer) {
@@ -15481,13 +15277,10 @@ module.exports = coerce
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare-build.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/compare-build.js ***!
-  \*******************************************************************************************/
+/***/ 554:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
+const SemVer = __webpack_require__(1538)
 const compareBuild = (a, b, loose) => {
   const versionA = new SemVer(a, loose)
   const versionB = new SemVer(b, loose)
@@ -15498,26 +15291,20 @@ module.exports = compareBuild
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare-loose.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/compare-loose.js ***!
-  \*******************************************************************************************/
+/***/ 3092:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const compare = __webpack_require__(/*! ./compare */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js")
+const compare = __webpack_require__(4017)
 const compareLoose = (a, b) => compare(a, b, true)
 module.exports = compareLoose
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js ***!
-  \*************************************************************************************/
+/***/ 4017:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
+const SemVer = __webpack_require__(1538)
 const compare = (a, b, loose) =>
   new SemVer(a, loose).compare(new SemVer(b, loose))
 
@@ -15526,14 +15313,11 @@ module.exports = compare
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/diff.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/diff.js ***!
-  \**********************************************************************************/
+/***/ 4108:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const parse = __webpack_require__(/*! ./parse */ "./node_modules/vscode-languageclient/node_modules/semver/functions/parse.js")
-const eq = __webpack_require__(/*! ./eq */ "./node_modules/vscode-languageclient/node_modules/semver/functions/eq.js")
+const parse = __webpack_require__(9836)
+const eq = __webpack_require__(6282)
 
 const diff = (version1, version2) => {
   if (eq(version1, version2)) {
@@ -15559,52 +15343,40 @@ module.exports = diff
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/eq.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/eq.js ***!
-  \********************************************************************************/
+/***/ 6282:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const compare = __webpack_require__(/*! ./compare */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js")
+const compare = __webpack_require__(4017)
 const eq = (a, b, loose) => compare(a, b, loose) === 0
 module.exports = eq
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/gt.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/gt.js ***!
-  \********************************************************************************/
+/***/ 1402:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const compare = __webpack_require__(/*! ./compare */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js")
+const compare = __webpack_require__(4017)
 const gt = (a, b, loose) => compare(a, b, loose) > 0
 module.exports = gt
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/gte.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/gte.js ***!
-  \*********************************************************************************/
+/***/ 2392:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const compare = __webpack_require__(/*! ./compare */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js")
+const compare = __webpack_require__(4017)
 const gte = (a, b, loose) => compare(a, b, loose) >= 0
 module.exports = gte
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/inc.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/inc.js ***!
-  \*********************************************************************************/
+/***/ 521:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
+const SemVer = __webpack_require__(1538)
 
 const inc = (version, release, options, identifier) => {
   if (typeof (options) === 'string') {
@@ -15623,82 +15395,64 @@ module.exports = inc
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/lt.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/lt.js ***!
-  \********************************************************************************/
+/***/ 3638:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const compare = __webpack_require__(/*! ./compare */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js")
+const compare = __webpack_require__(4017)
 const lt = (a, b, loose) => compare(a, b, loose) < 0
 module.exports = lt
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/lte.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/lte.js ***!
-  \*********************************************************************************/
+/***/ 7566:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const compare = __webpack_require__(/*! ./compare */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js")
+const compare = __webpack_require__(4017)
 const lte = (a, b, loose) => compare(a, b, loose) <= 0
 module.exports = lte
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/major.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/major.js ***!
-  \***********************************************************************************/
+/***/ 6069:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
+const SemVer = __webpack_require__(1538)
 const major = (a, loose) => new SemVer(a, loose).major
 module.exports = major
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/minor.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/minor.js ***!
-  \***********************************************************************************/
+/***/ 1708:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
+const SemVer = __webpack_require__(1538)
 const minor = (a, loose) => new SemVer(a, loose).minor
 module.exports = minor
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/neq.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/neq.js ***!
-  \*********************************************************************************/
+/***/ 3193:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const compare = __webpack_require__(/*! ./compare */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js")
+const compare = __webpack_require__(4017)
 const neq = (a, b, loose) => compare(a, b, loose) !== 0
 module.exports = neq
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/parse.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/parse.js ***!
-  \***********************************************************************************/
+/***/ 9836:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const {MAX_LENGTH} = __webpack_require__(/*! ../internal/constants */ "./node_modules/vscode-languageclient/node_modules/semver/internal/constants.js")
-const { re, t } = __webpack_require__(/*! ../internal/re */ "./node_modules/vscode-languageclient/node_modules/semver/internal/re.js")
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
+const {MAX_LENGTH} = __webpack_require__(5526)
+const { re, t } = __webpack_require__(9886)
+const SemVer = __webpack_require__(1538)
 
-const parseOptions = __webpack_require__(/*! ../internal/parse-options */ "./node_modules/vscode-languageclient/node_modules/semver/internal/parse-options.js")
+const parseOptions = __webpack_require__(9984)
 const parse = (version, options) => {
   options = parseOptions(options)
 
@@ -15731,26 +15485,20 @@ module.exports = parse
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/patch.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/patch.js ***!
-  \***********************************************************************************/
+/***/ 2905:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
+const SemVer = __webpack_require__(1538)
 const patch = (a, loose) => new SemVer(a, loose).patch
 module.exports = patch
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/prerelease.js":
-/*!****************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/prerelease.js ***!
-  \****************************************************************************************/
+/***/ 2234:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const parse = __webpack_require__(/*! ./parse */ "./node_modules/vscode-languageclient/node_modules/semver/functions/parse.js")
+const parse = __webpack_require__(9836)
 const prerelease = (version, options) => {
   const parsed = parse(version, options)
   return (parsed && parsed.prerelease.length) ? parsed.prerelease : null
@@ -15760,39 +15508,30 @@ module.exports = prerelease
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/rcompare.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/rcompare.js ***!
-  \**************************************************************************************/
+/***/ 4575:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const compare = __webpack_require__(/*! ./compare */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js")
+const compare = __webpack_require__(4017)
 const rcompare = (a, b, loose) => compare(b, a, loose)
 module.exports = rcompare
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/rsort.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/rsort.js ***!
-  \***********************************************************************************/
+/***/ 4610:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const compareBuild = __webpack_require__(/*! ./compare-build */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare-build.js")
+const compareBuild = __webpack_require__(554)
 const rsort = (list, loose) => list.sort((a, b) => compareBuild(b, a, loose))
 module.exports = rsort
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/satisfies.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/satisfies.js ***!
-  \***************************************************************************************/
+/***/ 4734:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const Range = __webpack_require__(/*! ../classes/range */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js")
+const Range = __webpack_require__(2149)
 const satisfies = (version, range, options) => {
   try {
     range = new Range(range, options)
@@ -15806,26 +15545,20 @@ module.exports = satisfies
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/sort.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/sort.js ***!
-  \**********************************************************************************/
+/***/ 976:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const compareBuild = __webpack_require__(/*! ./compare-build */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare-build.js")
+const compareBuild = __webpack_require__(554)
 const sort = (list, loose) => list.sort((a, b) => compareBuild(a, b, loose))
 module.exports = sort
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/functions/valid.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/functions/valid.js ***!
-  \***********************************************************************************/
+/***/ 2790:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const parse = __webpack_require__(/*! ./parse */ "./node_modules/vscode-languageclient/node_modules/semver/functions/parse.js")
+const parse = __webpack_require__(9836)
 const valid = (version, options) => {
   const v = parse(version, options)
   return v ? v.version : null
@@ -15835,68 +15568,62 @@ module.exports = valid
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/index.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/index.js ***!
-  \*************************************************************************/
+/***/ 7089:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // just pre-load all the stuff that index.js lazily exports
-const internalRe = __webpack_require__(/*! ./internal/re */ "./node_modules/vscode-languageclient/node_modules/semver/internal/re.js")
+const internalRe = __webpack_require__(9886)
 module.exports = {
   re: internalRe.re,
   src: internalRe.src,
   tokens: internalRe.t,
-  SEMVER_SPEC_VERSION: __webpack_require__(/*! ./internal/constants */ "./node_modules/vscode-languageclient/node_modules/semver/internal/constants.js").SEMVER_SPEC_VERSION,
-  SemVer: __webpack_require__(/*! ./classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js"),
-  compareIdentifiers: __webpack_require__(/*! ./internal/identifiers */ "./node_modules/vscode-languageclient/node_modules/semver/internal/identifiers.js").compareIdentifiers,
-  rcompareIdentifiers: __webpack_require__(/*! ./internal/identifiers */ "./node_modules/vscode-languageclient/node_modules/semver/internal/identifiers.js").rcompareIdentifiers,
-  parse: __webpack_require__(/*! ./functions/parse */ "./node_modules/vscode-languageclient/node_modules/semver/functions/parse.js"),
-  valid: __webpack_require__(/*! ./functions/valid */ "./node_modules/vscode-languageclient/node_modules/semver/functions/valid.js"),
-  clean: __webpack_require__(/*! ./functions/clean */ "./node_modules/vscode-languageclient/node_modules/semver/functions/clean.js"),
-  inc: __webpack_require__(/*! ./functions/inc */ "./node_modules/vscode-languageclient/node_modules/semver/functions/inc.js"),
-  diff: __webpack_require__(/*! ./functions/diff */ "./node_modules/vscode-languageclient/node_modules/semver/functions/diff.js"),
-  major: __webpack_require__(/*! ./functions/major */ "./node_modules/vscode-languageclient/node_modules/semver/functions/major.js"),
-  minor: __webpack_require__(/*! ./functions/minor */ "./node_modules/vscode-languageclient/node_modules/semver/functions/minor.js"),
-  patch: __webpack_require__(/*! ./functions/patch */ "./node_modules/vscode-languageclient/node_modules/semver/functions/patch.js"),
-  prerelease: __webpack_require__(/*! ./functions/prerelease */ "./node_modules/vscode-languageclient/node_modules/semver/functions/prerelease.js"),
-  compare: __webpack_require__(/*! ./functions/compare */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js"),
-  rcompare: __webpack_require__(/*! ./functions/rcompare */ "./node_modules/vscode-languageclient/node_modules/semver/functions/rcompare.js"),
-  compareLoose: __webpack_require__(/*! ./functions/compare-loose */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare-loose.js"),
-  compareBuild: __webpack_require__(/*! ./functions/compare-build */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare-build.js"),
-  sort: __webpack_require__(/*! ./functions/sort */ "./node_modules/vscode-languageclient/node_modules/semver/functions/sort.js"),
-  rsort: __webpack_require__(/*! ./functions/rsort */ "./node_modules/vscode-languageclient/node_modules/semver/functions/rsort.js"),
-  gt: __webpack_require__(/*! ./functions/gt */ "./node_modules/vscode-languageclient/node_modules/semver/functions/gt.js"),
-  lt: __webpack_require__(/*! ./functions/lt */ "./node_modules/vscode-languageclient/node_modules/semver/functions/lt.js"),
-  eq: __webpack_require__(/*! ./functions/eq */ "./node_modules/vscode-languageclient/node_modules/semver/functions/eq.js"),
-  neq: __webpack_require__(/*! ./functions/neq */ "./node_modules/vscode-languageclient/node_modules/semver/functions/neq.js"),
-  gte: __webpack_require__(/*! ./functions/gte */ "./node_modules/vscode-languageclient/node_modules/semver/functions/gte.js"),
-  lte: __webpack_require__(/*! ./functions/lte */ "./node_modules/vscode-languageclient/node_modules/semver/functions/lte.js"),
-  cmp: __webpack_require__(/*! ./functions/cmp */ "./node_modules/vscode-languageclient/node_modules/semver/functions/cmp.js"),
-  coerce: __webpack_require__(/*! ./functions/coerce */ "./node_modules/vscode-languageclient/node_modules/semver/functions/coerce.js"),
-  Comparator: __webpack_require__(/*! ./classes/comparator */ "./node_modules/vscode-languageclient/node_modules/semver/classes/comparator.js"),
-  Range: __webpack_require__(/*! ./classes/range */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js"),
-  satisfies: __webpack_require__(/*! ./functions/satisfies */ "./node_modules/vscode-languageclient/node_modules/semver/functions/satisfies.js"),
-  toComparators: __webpack_require__(/*! ./ranges/to-comparators */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/to-comparators.js"),
-  maxSatisfying: __webpack_require__(/*! ./ranges/max-satisfying */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/max-satisfying.js"),
-  minSatisfying: __webpack_require__(/*! ./ranges/min-satisfying */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/min-satisfying.js"),
-  minVersion: __webpack_require__(/*! ./ranges/min-version */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/min-version.js"),
-  validRange: __webpack_require__(/*! ./ranges/valid */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/valid.js"),
-  outside: __webpack_require__(/*! ./ranges/outside */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/outside.js"),
-  gtr: __webpack_require__(/*! ./ranges/gtr */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/gtr.js"),
-  ltr: __webpack_require__(/*! ./ranges/ltr */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/ltr.js"),
-  intersects: __webpack_require__(/*! ./ranges/intersects */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/intersects.js"),
-  simplifyRange: __webpack_require__(/*! ./ranges/simplify */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/simplify.js"),
-  subset: __webpack_require__(/*! ./ranges/subset */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/subset.js"),
+  SEMVER_SPEC_VERSION: __webpack_require__(5526).SEMVER_SPEC_VERSION,
+  SemVer: __webpack_require__(1538),
+  compareIdentifiers: __webpack_require__(3085).compareIdentifiers,
+  rcompareIdentifiers: __webpack_require__(3085).rcompareIdentifiers,
+  parse: __webpack_require__(9836),
+  valid: __webpack_require__(2790),
+  clean: __webpack_require__(3936),
+  inc: __webpack_require__(521),
+  diff: __webpack_require__(4108),
+  major: __webpack_require__(6069),
+  minor: __webpack_require__(1708),
+  patch: __webpack_require__(2905),
+  prerelease: __webpack_require__(2234),
+  compare: __webpack_require__(4017),
+  rcompare: __webpack_require__(4575),
+  compareLoose: __webpack_require__(3092),
+  compareBuild: __webpack_require__(554),
+  sort: __webpack_require__(976),
+  rsort: __webpack_require__(4610),
+  gt: __webpack_require__(1402),
+  lt: __webpack_require__(3638),
+  eq: __webpack_require__(6282),
+  neq: __webpack_require__(3193),
+  gte: __webpack_require__(2392),
+  lte: __webpack_require__(7566),
+  cmp: __webpack_require__(2231),
+  coerce: __webpack_require__(1881),
+  Comparator: __webpack_require__(873),
+  Range: __webpack_require__(2149),
+  satisfies: __webpack_require__(4734),
+  toComparators: __webpack_require__(7307),
+  maxSatisfying: __webpack_require__(2291),
+  minSatisfying: __webpack_require__(454),
+  minVersion: __webpack_require__(5067),
+  validRange: __webpack_require__(9375),
+  outside: __webpack_require__(9108),
+  gtr: __webpack_require__(2349),
+  ltr: __webpack_require__(1055),
+  intersects: __webpack_require__(1483),
+  simplifyRange: __webpack_require__(2885),
+  subset: __webpack_require__(6571),
 }
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/internal/constants.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/internal/constants.js ***!
-  \**************************************************************************************/
+/***/ 5526:
 /***/ ((module) => {
 
 // Note: this is the semver.org version of the spec that it implements
@@ -15920,10 +15647,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/internal/debug.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/internal/debug.js ***!
-  \**********************************************************************************/
+/***/ 9814:
 /***/ ((module) => {
 
 const debug = (
@@ -15939,10 +15663,7 @@ module.exports = debug
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/internal/identifiers.js":
-/*!****************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/internal/identifiers.js ***!
-  \****************************************************************************************/
+/***/ 3085:
 /***/ ((module) => {
 
 const numeric = /^[0-9]+$/
@@ -15972,10 +15693,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/internal/parse-options.js":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/internal/parse-options.js ***!
-  \******************************************************************************************/
+/***/ 9984:
 /***/ ((module) => {
 
 // parse out just the options we care about so we always get a consistent
@@ -15993,14 +15711,11 @@ module.exports = parseOptions
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/internal/re.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/internal/re.js ***!
-  \*******************************************************************************/
+/***/ 9886:
 /***/ ((module, exports, __webpack_require__) => {
 
-const { MAX_SAFE_COMPONENT_LENGTH } = __webpack_require__(/*! ./constants */ "./node_modules/vscode-languageclient/node_modules/semver/internal/constants.js")
-const debug = __webpack_require__(/*! ./debug */ "./node_modules/vscode-languageclient/node_modules/semver/internal/debug.js")
+const { MAX_SAFE_COMPONENT_LENGTH } = __webpack_require__(5526)
+const debug = __webpack_require__(9814)
 exports = module.exports = {}
 
 // The actual regexps go on exports.re
@@ -16185,27 +15900,21 @@ createToken('GTE0PRE', '^\\s*>=\\s*0\.0\.0-0\\s*$')
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/gtr.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/gtr.js ***!
-  \******************************************************************************/
+/***/ 2349:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Determine if version is greater than all the versions possible in the range.
-const outside = __webpack_require__(/*! ./outside */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/outside.js")
+const outside = __webpack_require__(9108)
 const gtr = (version, range, options) => outside(version, range, '>', options)
 module.exports = gtr
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/intersects.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/intersects.js ***!
-  \*************************************************************************************/
+/***/ 1483:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const Range = __webpack_require__(/*! ../classes/range */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js")
+const Range = __webpack_require__(2149)
 const intersects = (r1, r2, options) => {
   r1 = new Range(r1, options)
   r2 = new Range(r2, options)
@@ -16216,13 +15925,10 @@ module.exports = intersects
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/ltr.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/ltr.js ***!
-  \******************************************************************************/
+/***/ 1055:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const outside = __webpack_require__(/*! ./outside */ "./node_modules/vscode-languageclient/node_modules/semver/ranges/outside.js")
+const outside = __webpack_require__(9108)
 // Determine if version is less than all the versions possible in the range
 const ltr = (version, range, options) => outside(version, range, '<', options)
 module.exports = ltr
@@ -16230,14 +15936,11 @@ module.exports = ltr
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/max-satisfying.js":
-/*!*****************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/max-satisfying.js ***!
-  \*****************************************************************************************/
+/***/ 2291:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
-const Range = __webpack_require__(/*! ../classes/range */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js")
+const SemVer = __webpack_require__(1538)
+const Range = __webpack_require__(2149)
 
 const maxSatisfying = (versions, range, options) => {
   let max = null
@@ -16265,14 +15968,11 @@ module.exports = maxSatisfying
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/min-satisfying.js":
-/*!*****************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/min-satisfying.js ***!
-  \*****************************************************************************************/
+/***/ 454:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
-const Range = __webpack_require__(/*! ../classes/range */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js")
+const SemVer = __webpack_require__(1538)
+const Range = __webpack_require__(2149)
 const minSatisfying = (versions, range, options) => {
   let min = null
   let minSV = null
@@ -16299,15 +15999,12 @@ module.exports = minSatisfying
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/min-version.js":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/min-version.js ***!
-  \**************************************************************************************/
+/***/ 5067:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
-const Range = __webpack_require__(/*! ../classes/range */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js")
-const gt = __webpack_require__(/*! ../functions/gt */ "./node_modules/vscode-languageclient/node_modules/semver/functions/gt.js")
+const SemVer = __webpack_require__(1538)
+const Range = __webpack_require__(2149)
+const gt = __webpack_require__(1402)
 
 const minVersion = (range, loose) => {
   range = new Range(range, loose)
@@ -16369,21 +16066,18 @@ module.exports = minVersion
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/outside.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/outside.js ***!
-  \**********************************************************************************/
+/***/ 9108:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const SemVer = __webpack_require__(/*! ../classes/semver */ "./node_modules/vscode-languageclient/node_modules/semver/classes/semver.js")
-const Comparator = __webpack_require__(/*! ../classes/comparator */ "./node_modules/vscode-languageclient/node_modules/semver/classes/comparator.js")
+const SemVer = __webpack_require__(1538)
+const Comparator = __webpack_require__(873)
 const {ANY} = Comparator
-const Range = __webpack_require__(/*! ../classes/range */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js")
-const satisfies = __webpack_require__(/*! ../functions/satisfies */ "./node_modules/vscode-languageclient/node_modules/semver/functions/satisfies.js")
-const gt = __webpack_require__(/*! ../functions/gt */ "./node_modules/vscode-languageclient/node_modules/semver/functions/gt.js")
-const lt = __webpack_require__(/*! ../functions/lt */ "./node_modules/vscode-languageclient/node_modules/semver/functions/lt.js")
-const lte = __webpack_require__(/*! ../functions/lte */ "./node_modules/vscode-languageclient/node_modules/semver/functions/lte.js")
-const gte = __webpack_require__(/*! ../functions/gte */ "./node_modules/vscode-languageclient/node_modules/semver/functions/gte.js")
+const Range = __webpack_require__(2149)
+const satisfies = __webpack_require__(4734)
+const gt = __webpack_require__(1402)
+const lt = __webpack_require__(3638)
+const lte = __webpack_require__(7566)
+const gte = __webpack_require__(2392)
 
 const outside = (version, range, hilo, options) => {
   version = new SemVer(version, options)
@@ -16459,17 +16153,14 @@ module.exports = outside
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/simplify.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/simplify.js ***!
-  \***********************************************************************************/
+/***/ 2885:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // given a set of versions and a range, create a "simplified" range
 // that includes the same versions that the original range does
 // If the original range is shorter than the simplified one, return that.
-const satisfies = __webpack_require__(/*! ../functions/satisfies.js */ "./node_modules/vscode-languageclient/node_modules/semver/functions/satisfies.js")
-const compare = __webpack_require__(/*! ../functions/compare.js */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js")
+const satisfies = __webpack_require__(4734)
+const compare = __webpack_require__(4017)
 module.exports = (versions, range, options) => {
   const set = []
   let min = null
@@ -16513,17 +16204,14 @@ module.exports = (versions, range, options) => {
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/subset.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/subset.js ***!
-  \*********************************************************************************/
+/***/ 6571:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const Range = __webpack_require__(/*! ../classes/range.js */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js")
-const Comparator = __webpack_require__(/*! ../classes/comparator.js */ "./node_modules/vscode-languageclient/node_modules/semver/classes/comparator.js")
+const Range = __webpack_require__(2149)
+const Comparator = __webpack_require__(873)
 const { ANY } = Comparator
-const satisfies = __webpack_require__(/*! ../functions/satisfies.js */ "./node_modules/vscode-languageclient/node_modules/semver/functions/satisfies.js")
-const compare = __webpack_require__(/*! ../functions/compare.js */ "./node_modules/vscode-languageclient/node_modules/semver/functions/compare.js")
+const satisfies = __webpack_require__(4734)
+const compare = __webpack_require__(4017)
 
 // Complex range `r1 || r2 || ...` is a subset of `R1 || R2 || ...` iff:
 // - Every simple range `r1, r2, ...` is a null set, OR
@@ -16745,13 +16433,10 @@ module.exports = subset
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/to-comparators.js":
-/*!*****************************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/to-comparators.js ***!
-  \*****************************************************************************************/
+/***/ 7307:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const Range = __webpack_require__(/*! ../classes/range */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js")
+const Range = __webpack_require__(2149)
 
 // Mostly just for testing and legacy API reasons
 const toComparators = (range, options) =>
@@ -16763,13 +16448,10 @@ module.exports = toComparators
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/semver/ranges/valid.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/semver/ranges/valid.js ***!
-  \********************************************************************************/
+/***/ 9375:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const Range = __webpack_require__(/*! ../classes/range */ "./node_modules/vscode-languageclient/node_modules/semver/classes/range.js")
+const Range = __webpack_require__(2149)
 const validRange = (range, options) => {
   try {
     // Return '*' instead of '' so that truthiness works.
@@ -16784,10 +16466,7 @@ module.exports = validRange
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/yallist/iterator.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/yallist/iterator.js ***!
-  \*****************************************************************************/
+/***/ 9407:
 /***/ ((module) => {
 
 "use strict";
@@ -16803,10 +16482,7 @@ module.exports = function (Yallist) {
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageclient/node_modules/yallist/yallist.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/vscode-languageclient/node_modules/yallist/yallist.js ***!
-  \****************************************************************************/
+/***/ 6869:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -17234,16 +16910,13 @@ function Node (value, prev, next, list) {
 
 try {
   // add if support for Symbol.iterator is present
-  __webpack_require__(/*! ./iterator.js */ "./node_modules/vscode-languageclient/node_modules/yallist/iterator.js")(Yallist)
+  __webpack_require__(9407)(Yallist)
 } catch (er) {}
 
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/api.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/api.js ***!
-  \***********************************************************************/
+/***/ 7889:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -17264,11 +16937,11 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.LSPErrorCodes = exports.createProtocolConnection = void 0;
-__exportStar(__webpack_require__(/*! vscode-jsonrpc */ "./node_modules/vscode-jsonrpc/lib/node/main.js"), exports);
-__exportStar(__webpack_require__(/*! vscode-languageserver-types */ "./node_modules/vscode-languageserver-types/lib/umd/main.js"), exports);
-__exportStar(__webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js"), exports);
-__exportStar(__webpack_require__(/*! ./protocol */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.js"), exports);
-var connection_1 = __webpack_require__(/*! ./connection */ "./node_modules/vscode-languageserver-protocol/lib/common/connection.js");
+__exportStar(__webpack_require__(5769), exports);
+__exportStar(__webpack_require__(4970), exports);
+__exportStar(__webpack_require__(1015), exports);
+__exportStar(__webpack_require__(1840), exports);
+var connection_1 = __webpack_require__(5640);
 Object.defineProperty(exports, "createProtocolConnection", ({ enumerable: true, get: function () { return connection_1.createProtocolConnection; } }));
 var LSPErrorCodes;
 (function (LSPErrorCodes) {
@@ -17293,10 +16966,7 @@ var LSPErrorCodes;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/connection.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/connection.js ***!
-  \******************************************************************************/
+/***/ 5640:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17307,7 +16977,7 @@ var LSPErrorCodes;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.createProtocolConnection = void 0;
-const vscode_jsonrpc_1 = __webpack_require__(/*! vscode-jsonrpc */ "./node_modules/vscode-jsonrpc/lib/node/main.js");
+const vscode_jsonrpc_1 = __webpack_require__(5769);
 function createProtocolConnection(input, output, logger, options) {
     if (vscode_jsonrpc_1.ConnectionStrategy.is(options)) {
         options = { connectionStrategy: options };
@@ -17319,10 +16989,7 @@ exports.createProtocolConnection = createProtocolConnection;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/messages.js ***!
-  \****************************************************************************/
+/***/ 1015:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17333,7 +17000,7 @@ exports.createProtocolConnection = createProtocolConnection;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ProtocolNotificationType = exports.ProtocolNotificationType0 = exports.ProtocolRequestType = exports.ProtocolRequestType0 = exports.RegistrationType = void 0;
-const vscode_jsonrpc_1 = __webpack_require__(/*! vscode-jsonrpc */ "./node_modules/vscode-jsonrpc/lib/node/main.js");
+const vscode_jsonrpc_1 = __webpack_require__(5769);
 class RegistrationType {
     constructor(method) {
         this.method = method;
@@ -17371,10 +17038,7 @@ exports.ProtocolNotificationType = ProtocolNotificationType;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.callHierarchy.js":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.callHierarchy.js ***!
-  \******************************************************************************************/
+/***/ 2323:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17385,7 +17049,7 @@ exports.ProtocolNotificationType = ProtocolNotificationType;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.CallHierarchyOutgoingCallsRequest = exports.CallHierarchyIncomingCallsRequest = exports.CallHierarchyPrepareRequest = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * A request to result a `CallHierarchyItem` in a document at a given position.
  * Can be used as an input to a incoming or outgoing call hierarchy.
@@ -17421,10 +17085,7 @@ var CallHierarchyOutgoingCallsRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.colorProvider.js":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.colorProvider.js ***!
-  \******************************************************************************************/
+/***/ 9769:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17435,7 +17096,7 @@ var CallHierarchyOutgoingCallsRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ColorPresentationRequest = exports.DocumentColorRequest = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * A request to list all color symbols found in a given text document. The request's
  * parameter is of type [DocumentColorParams](#DocumentColorParams) the
@@ -17461,10 +17122,7 @@ var ColorPresentationRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.configuration.js":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.configuration.js ***!
-  \******************************************************************************************/
+/***/ 5016:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17475,7 +17133,7 @@ var ColorPresentationRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ConfigurationRequest = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * The 'workspace/configuration' request is sent from the server to the client to fetch a certain
  * configuration setting.
@@ -17493,10 +17151,7 @@ var ConfigurationRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.declaration.js":
-/*!****************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.declaration.js ***!
-  \****************************************************************************************/
+/***/ 7832:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17507,7 +17162,7 @@ var ConfigurationRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DeclarationRequest = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 // @ts-ignore: to avoid inlining LocatioLink as dynamic import
 let __noDynamicImport;
 /**
@@ -17526,10 +17181,7 @@ var DeclarationRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.fileOperations.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.fileOperations.js ***!
-  \*******************************************************************************************/
+/***/ 4262:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17540,7 +17192,7 @@ var DeclarationRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.WillDeleteFilesRequest = exports.DidDeleteFilesNotification = exports.DidRenameFilesNotification = exports.WillRenameFilesRequest = exports.DidCreateFilesNotification = exports.WillCreateFilesRequest = exports.FileOperationPatternKind = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * A pattern kind describing if a glob pattern matches a file a folder or
  * both.
@@ -17628,10 +17280,7 @@ var WillDeleteFilesRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.foldingRange.js":
-/*!*****************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.foldingRange.js ***!
-  \*****************************************************************************************/
+/***/ 1318:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17642,7 +17291,7 @@ var WillDeleteFilesRequest;
  *--------------------------------------------------------------------------------------------*/
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.FoldingRangeRequest = exports.FoldingRangeKind = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * Enum of known range kinds
  */
@@ -17676,10 +17325,7 @@ var FoldingRangeRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.implementation.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.implementation.js ***!
-  \*******************************************************************************************/
+/***/ 1625:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17690,7 +17336,7 @@ var FoldingRangeRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ImplementationRequest = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 // @ts-ignore: to avoid inlining LocatioLink as dynamic import
 let __noDynamicImport;
 /**
@@ -17708,10 +17354,7 @@ var ImplementationRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.js ***!
-  \****************************************************************************/
+/***/ 1840:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -17723,35 +17366,35 @@ var ImplementationRequest;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DocumentLinkRequest = exports.CodeLensRefreshRequest = exports.CodeLensResolveRequest = exports.CodeLensRequest = exports.WorkspaceSymbolRequest = exports.CodeActionResolveRequest = exports.CodeActionRequest = exports.DocumentSymbolRequest = exports.DocumentHighlightRequest = exports.ReferencesRequest = exports.DefinitionRequest = exports.SignatureHelpRequest = exports.SignatureHelpTriggerKind = exports.HoverRequest = exports.CompletionResolveRequest = exports.CompletionRequest = exports.CompletionTriggerKind = exports.PublishDiagnosticsNotification = exports.WatchKind = exports.FileChangeType = exports.DidChangeWatchedFilesNotification = exports.WillSaveTextDocumentWaitUntilRequest = exports.WillSaveTextDocumentNotification = exports.TextDocumentSaveReason = exports.DidSaveTextDocumentNotification = exports.DidCloseTextDocumentNotification = exports.DidChangeTextDocumentNotification = exports.TextDocumentContentChangeEvent = exports.DidOpenTextDocumentNotification = exports.TextDocumentSyncKind = exports.TelemetryEventNotification = exports.LogMessageNotification = exports.ShowMessageRequest = exports.ShowMessageNotification = exports.MessageType = exports.DidChangeConfigurationNotification = exports.ExitNotification = exports.ShutdownRequest = exports.InitializedNotification = exports.InitializeError = exports.InitializeRequest = exports.WorkDoneProgressOptions = exports.TextDocumentRegistrationOptions = exports.StaticRegistrationOptions = exports.FailureHandlingKind = exports.ResourceOperationKind = exports.UnregistrationRequest = exports.RegistrationRequest = exports.DocumentSelector = exports.DocumentFilter = void 0;
 exports.MonikerRequest = exports.MonikerKind = exports.UniquenessLevel = exports.WillDeleteFilesRequest = exports.DidDeleteFilesNotification = exports.WillRenameFilesRequest = exports.DidRenameFilesNotification = exports.WillCreateFilesRequest = exports.DidCreateFilesNotification = exports.FileOperationPatternKind = exports.LinkedEditingRangeRequest = exports.ShowDocumentRequest = exports.SemanticTokensRegistrationType = exports.SemanticTokensRefreshRequest = exports.SemanticTokensRangeRequest = exports.SemanticTokensDeltaRequest = exports.SemanticTokensRequest = exports.TokenFormat = exports.SemanticTokens = exports.SemanticTokenModifiers = exports.SemanticTokenTypes = exports.CallHierarchyPrepareRequest = exports.CallHierarchyOutgoingCallsRequest = exports.CallHierarchyIncomingCallsRequest = exports.WorkDoneProgressCancelNotification = exports.WorkDoneProgressCreateRequest = exports.WorkDoneProgress = exports.SelectionRangeRequest = exports.DeclarationRequest = exports.FoldingRangeRequest = exports.ColorPresentationRequest = exports.DocumentColorRequest = exports.ConfigurationRequest = exports.DidChangeWorkspaceFoldersNotification = exports.WorkspaceFoldersRequest = exports.TypeDefinitionRequest = exports.ImplementationRequest = exports.ApplyWorkspaceEditRequest = exports.ExecuteCommandRequest = exports.PrepareRenameRequest = exports.RenameRequest = exports.PrepareSupportDefaultBehavior = exports.DocumentOnTypeFormattingRequest = exports.DocumentRangeFormattingRequest = exports.DocumentFormattingRequest = exports.DocumentLinkResolveRequest = void 0;
-const Is = __webpack_require__(/*! ./utils/is */ "./node_modules/vscode-languageserver-protocol/lib/common/utils/is.js");
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
-const protocol_implementation_1 = __webpack_require__(/*! ./protocol.implementation */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.implementation.js");
+const Is = __webpack_require__(5447);
+const messages_1 = __webpack_require__(1015);
+const protocol_implementation_1 = __webpack_require__(1625);
 Object.defineProperty(exports, "ImplementationRequest", ({ enumerable: true, get: function () { return protocol_implementation_1.ImplementationRequest; } }));
-const protocol_typeDefinition_1 = __webpack_require__(/*! ./protocol.typeDefinition */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.typeDefinition.js");
+const protocol_typeDefinition_1 = __webpack_require__(8138);
 Object.defineProperty(exports, "TypeDefinitionRequest", ({ enumerable: true, get: function () { return protocol_typeDefinition_1.TypeDefinitionRequest; } }));
-const protocol_workspaceFolders_1 = __webpack_require__(/*! ./protocol.workspaceFolders */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.workspaceFolders.js");
+const protocol_workspaceFolders_1 = __webpack_require__(1650);
 Object.defineProperty(exports, "WorkspaceFoldersRequest", ({ enumerable: true, get: function () { return protocol_workspaceFolders_1.WorkspaceFoldersRequest; } }));
 Object.defineProperty(exports, "DidChangeWorkspaceFoldersNotification", ({ enumerable: true, get: function () { return protocol_workspaceFolders_1.DidChangeWorkspaceFoldersNotification; } }));
-const protocol_configuration_1 = __webpack_require__(/*! ./protocol.configuration */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.configuration.js");
+const protocol_configuration_1 = __webpack_require__(5016);
 Object.defineProperty(exports, "ConfigurationRequest", ({ enumerable: true, get: function () { return protocol_configuration_1.ConfigurationRequest; } }));
-const protocol_colorProvider_1 = __webpack_require__(/*! ./protocol.colorProvider */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.colorProvider.js");
+const protocol_colorProvider_1 = __webpack_require__(9769);
 Object.defineProperty(exports, "DocumentColorRequest", ({ enumerable: true, get: function () { return protocol_colorProvider_1.DocumentColorRequest; } }));
 Object.defineProperty(exports, "ColorPresentationRequest", ({ enumerable: true, get: function () { return protocol_colorProvider_1.ColorPresentationRequest; } }));
-const protocol_foldingRange_1 = __webpack_require__(/*! ./protocol.foldingRange */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.foldingRange.js");
+const protocol_foldingRange_1 = __webpack_require__(1318);
 Object.defineProperty(exports, "FoldingRangeRequest", ({ enumerable: true, get: function () { return protocol_foldingRange_1.FoldingRangeRequest; } }));
-const protocol_declaration_1 = __webpack_require__(/*! ./protocol.declaration */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.declaration.js");
+const protocol_declaration_1 = __webpack_require__(7832);
 Object.defineProperty(exports, "DeclarationRequest", ({ enumerable: true, get: function () { return protocol_declaration_1.DeclarationRequest; } }));
-const protocol_selectionRange_1 = __webpack_require__(/*! ./protocol.selectionRange */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.selectionRange.js");
+const protocol_selectionRange_1 = __webpack_require__(6936);
 Object.defineProperty(exports, "SelectionRangeRequest", ({ enumerable: true, get: function () { return protocol_selectionRange_1.SelectionRangeRequest; } }));
-const protocol_progress_1 = __webpack_require__(/*! ./protocol.progress */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.progress.js");
+const protocol_progress_1 = __webpack_require__(7630);
 Object.defineProperty(exports, "WorkDoneProgress", ({ enumerable: true, get: function () { return protocol_progress_1.WorkDoneProgress; } }));
 Object.defineProperty(exports, "WorkDoneProgressCreateRequest", ({ enumerable: true, get: function () { return protocol_progress_1.WorkDoneProgressCreateRequest; } }));
 Object.defineProperty(exports, "WorkDoneProgressCancelNotification", ({ enumerable: true, get: function () { return protocol_progress_1.WorkDoneProgressCancelNotification; } }));
-const protocol_callHierarchy_1 = __webpack_require__(/*! ./protocol.callHierarchy */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.callHierarchy.js");
+const protocol_callHierarchy_1 = __webpack_require__(2323);
 Object.defineProperty(exports, "CallHierarchyIncomingCallsRequest", ({ enumerable: true, get: function () { return protocol_callHierarchy_1.CallHierarchyIncomingCallsRequest; } }));
 Object.defineProperty(exports, "CallHierarchyOutgoingCallsRequest", ({ enumerable: true, get: function () { return protocol_callHierarchy_1.CallHierarchyOutgoingCallsRequest; } }));
 Object.defineProperty(exports, "CallHierarchyPrepareRequest", ({ enumerable: true, get: function () { return protocol_callHierarchy_1.CallHierarchyPrepareRequest; } }));
-const protocol_semanticTokens_1 = __webpack_require__(/*! ./protocol.semanticTokens */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.semanticTokens.js");
+const protocol_semanticTokens_1 = __webpack_require__(2460);
 Object.defineProperty(exports, "SemanticTokenTypes", ({ enumerable: true, get: function () { return protocol_semanticTokens_1.SemanticTokenTypes; } }));
 Object.defineProperty(exports, "SemanticTokenModifiers", ({ enumerable: true, get: function () { return protocol_semanticTokens_1.SemanticTokenModifiers; } }));
 Object.defineProperty(exports, "SemanticTokens", ({ enumerable: true, get: function () { return protocol_semanticTokens_1.SemanticTokens; } }));
@@ -17761,11 +17404,11 @@ Object.defineProperty(exports, "SemanticTokensDeltaRequest", ({ enumerable: true
 Object.defineProperty(exports, "SemanticTokensRangeRequest", ({ enumerable: true, get: function () { return protocol_semanticTokens_1.SemanticTokensRangeRequest; } }));
 Object.defineProperty(exports, "SemanticTokensRefreshRequest", ({ enumerable: true, get: function () { return protocol_semanticTokens_1.SemanticTokensRefreshRequest; } }));
 Object.defineProperty(exports, "SemanticTokensRegistrationType", ({ enumerable: true, get: function () { return protocol_semanticTokens_1.SemanticTokensRegistrationType; } }));
-const protocol_showDocument_1 = __webpack_require__(/*! ./protocol.showDocument */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.showDocument.js");
+const protocol_showDocument_1 = __webpack_require__(7555);
 Object.defineProperty(exports, "ShowDocumentRequest", ({ enumerable: true, get: function () { return protocol_showDocument_1.ShowDocumentRequest; } }));
-const protocol_linkedEditingRange_1 = __webpack_require__(/*! ./protocol.linkedEditingRange */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.linkedEditingRange.js");
+const protocol_linkedEditingRange_1 = __webpack_require__(2662);
 Object.defineProperty(exports, "LinkedEditingRangeRequest", ({ enumerable: true, get: function () { return protocol_linkedEditingRange_1.LinkedEditingRangeRequest; } }));
-const protocol_fileOperations_1 = __webpack_require__(/*! ./protocol.fileOperations */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.fileOperations.js");
+const protocol_fileOperations_1 = __webpack_require__(4262);
 Object.defineProperty(exports, "FileOperationPatternKind", ({ enumerable: true, get: function () { return protocol_fileOperations_1.FileOperationPatternKind; } }));
 Object.defineProperty(exports, "DidCreateFilesNotification", ({ enumerable: true, get: function () { return protocol_fileOperations_1.DidCreateFilesNotification; } }));
 Object.defineProperty(exports, "WillCreateFilesRequest", ({ enumerable: true, get: function () { return protocol_fileOperations_1.WillCreateFilesRequest; } }));
@@ -17773,7 +17416,7 @@ Object.defineProperty(exports, "DidRenameFilesNotification", ({ enumerable: true
 Object.defineProperty(exports, "WillRenameFilesRequest", ({ enumerable: true, get: function () { return protocol_fileOperations_1.WillRenameFilesRequest; } }));
 Object.defineProperty(exports, "DidDeleteFilesNotification", ({ enumerable: true, get: function () { return protocol_fileOperations_1.DidDeleteFilesNotification; } }));
 Object.defineProperty(exports, "WillDeleteFilesRequest", ({ enumerable: true, get: function () { return protocol_fileOperations_1.WillDeleteFilesRequest; } }));
-const protocol_moniker_1 = __webpack_require__(/*! ./protocol.moniker */ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.moniker.js");
+const protocol_moniker_1 = __webpack_require__(6157);
 Object.defineProperty(exports, "UniquenessLevel", ({ enumerable: true, get: function () { return protocol_moniker_1.UniquenessLevel; } }));
 Object.defineProperty(exports, "MonikerKind", ({ enumerable: true, get: function () { return protocol_moniker_1.MonikerKind; } }));
 Object.defineProperty(exports, "MonikerRequest", ({ enumerable: true, get: function () { return protocol_moniker_1.MonikerRequest; } }));
@@ -18473,10 +18116,7 @@ var ApplyWorkspaceEditRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.linkedEditingRange.js":
-/*!***********************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.linkedEditingRange.js ***!
-  \***********************************************************************************************/
+/***/ 2662:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -18487,7 +18127,7 @@ var ApplyWorkspaceEditRequest;
  *--------------------------------------------------------------------------------------------*/
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.LinkedEditingRangeRequest = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * A request to provide ranges that can be edited together.
  *
@@ -18502,10 +18142,7 @@ var LinkedEditingRangeRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.moniker.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.moniker.js ***!
-  \************************************************************************************/
+/***/ 6157:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -18516,7 +18153,7 @@ var LinkedEditingRangeRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.MonikerRequest = exports.MonikerKind = exports.UniquenessLevel = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * Moniker uniqueness level to define scope of the moniker.
  *
@@ -18580,10 +18217,7 @@ var MonikerRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.progress.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.progress.js ***!
-  \*************************************************************************************/
+/***/ 7630:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -18594,8 +18228,8 @@ var MonikerRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.WorkDoneProgressCancelNotification = exports.WorkDoneProgressCreateRequest = exports.WorkDoneProgress = void 0;
-const vscode_jsonrpc_1 = __webpack_require__(/*! vscode-jsonrpc */ "./node_modules/vscode-jsonrpc/lib/node/main.js");
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const vscode_jsonrpc_1 = __webpack_require__(5769);
+const messages_1 = __webpack_require__(1015);
 var WorkDoneProgress;
 (function (WorkDoneProgress) {
     WorkDoneProgress.type = new vscode_jsonrpc_1.ProgressType();
@@ -18624,10 +18258,7 @@ var WorkDoneProgressCancelNotification;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.selectionRange.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.selectionRange.js ***!
-  \*******************************************************************************************/
+/***/ 6936:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -18638,7 +18269,7 @@ var WorkDoneProgressCancelNotification;
  *--------------------------------------------------------------------------------------------*/
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SelectionRangeRequest = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * A request to provide selection ranges in a document. The request's
  * parameter is of type [SelectionRangeParams](#SelectionRangeParams), the
@@ -18654,10 +18285,7 @@ var SelectionRangeRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.semanticTokens.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.semanticTokens.js ***!
-  \*******************************************************************************************/
+/***/ 2460:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -18668,7 +18296,7 @@ var SelectionRangeRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SemanticTokensRefreshRequest = exports.SemanticTokensRangeRequest = exports.SemanticTokensDeltaRequest = exports.SemanticTokensRequest = exports.SemanticTokensRegistrationType = exports.TokenFormat = exports.SemanticTokens = exports.SemanticTokenModifiers = exports.SemanticTokenTypes = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * A set of predefined token types. This set is not fixed
  * an clients can specify additional token types via the
@@ -18783,10 +18411,7 @@ var SemanticTokensRefreshRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.showDocument.js":
-/*!*****************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.showDocument.js ***!
-  \*****************************************************************************************/
+/***/ 7555:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -18797,7 +18422,7 @@ var SemanticTokensRefreshRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.ShowDocumentRequest = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * A request to show a document. This request might open an
  * external program depending on the value of the URI to open.
@@ -18815,10 +18440,7 @@ var ShowDocumentRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.typeDefinition.js":
-/*!*******************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.typeDefinition.js ***!
-  \*******************************************************************************************/
+/***/ 8138:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -18829,7 +18451,7 @@ var ShowDocumentRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.TypeDefinitionRequest = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 // @ts-ignore: to avoid inlining LocatioLink as dynamic import
 let __noDynamicImport;
 /**
@@ -18847,10 +18469,7 @@ var TypeDefinitionRequest;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/protocol.workspaceFolders.js":
-/*!*********************************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/protocol.workspaceFolders.js ***!
-  \*********************************************************************************************/
+/***/ 1650:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -18861,7 +18480,7 @@ var TypeDefinitionRequest;
  * ------------------------------------------------------------------------------------------ */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DidChangeWorkspaceFoldersNotification = exports.WorkspaceFoldersRequest = void 0;
-const messages_1 = __webpack_require__(/*! ./messages */ "./node_modules/vscode-languageserver-protocol/lib/common/messages.js");
+const messages_1 = __webpack_require__(1015);
 /**
  * The `workspace/workspaceFolders` is sent from the server to the client to fetch the open workspace folders.
  */
@@ -18881,10 +18500,7 @@ var DidChangeWorkspaceFoldersNotification;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/common/utils/is.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/common/utils/is.js ***!
-  \****************************************************************************/
+/***/ 5447:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -18938,10 +18554,7 @@ exports.objectLiteral = objectLiteral;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/lib/node/main.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/lib/node/main.js ***!
-  \**********************************************************************/
+/***/ 9473:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
@@ -18962,9 +18575,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.createProtocolConnection = void 0;
-const node_1 = __webpack_require__(/*! vscode-jsonrpc/node */ "./node_modules/vscode-jsonrpc/node.js");
-__exportStar(__webpack_require__(/*! vscode-jsonrpc/node */ "./node_modules/vscode-jsonrpc/node.js"), exports);
-__exportStar(__webpack_require__(/*! ../common/api */ "./node_modules/vscode-languageserver-protocol/lib/common/api.js"), exports);
+const node_1 = __webpack_require__(7689);
+__exportStar(__webpack_require__(7689), exports);
+__exportStar(__webpack_require__(7889), exports);
 function createProtocolConnection(input, output, logger, options) {
     return node_1.createMessageConnection(input, output, logger, options);
 }
@@ -18973,10 +18586,7 @@ exports.createProtocolConnection = createProtocolConnection;
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-protocol/node.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-protocol/node.js ***!
-  \*************************************************************/
+/***/ 2090:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -18986,19 +18596,16 @@ exports.createProtocolConnection = createProtocolConnection;
  * ----------------------------------------------------------------------------------------- */
 
 
-module.exports = __webpack_require__(/*! ./lib/node/main */ "./node_modules/vscode-languageserver-protocol/lib/node/main.js");
+module.exports = __webpack_require__(9473);
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-types/lib/umd/main.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-types/lib/umd/main.js ***!
-  \******************************************************************/
+/***/ 4970:
 /***/ ((module, exports, __webpack_require__) => {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (factory) {
     if ( true && typeof module.exports === "object") {
-        var v = factory(__webpack_require__("./node_modules/vscode-languageserver-types/lib/umd sync recursive"), exports);
+        var v = factory(__webpack_require__(7492), exports);
         if (v !== undefined) module.exports = v;
     }
     else if (true) {
@@ -20923,28 +20530,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 
-/***/ "./node_modules/vscode-languageserver-types/lib/umd sync recursive":
-/*!****************************************************************!*\
-  !*** ./node_modules/vscode-languageserver-types/lib/umd/ sync ***!
-  \****************************************************************/
-/***/ ((module) => {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = () => ([]);
-webpackEmptyContext.resolve = webpackEmptyContext;
-webpackEmptyContext.id = "./node_modules/vscode-languageserver-types/lib/umd sync recursive";
-module.exports = webpackEmptyContext;
-
-/***/ }),
-
-/***/ "child_process":
-/*!********************************!*\
-  !*** external "child_process" ***!
-  \********************************/
+/***/ 3129:
 /***/ ((module) => {
 
 "use strict";
@@ -20952,10 +20538,7 @@ module.exports = require("child_process");
 
 /***/ }),
 
-/***/ "crypto":
-/*!*************************!*\
-  !*** external "crypto" ***!
-  \*************************/
+/***/ 6417:
 /***/ ((module) => {
 
 "use strict";
@@ -20963,10 +20546,7 @@ module.exports = require("crypto");
 
 /***/ }),
 
-/***/ "events":
-/*!*************************!*\
-  !*** external "events" ***!
-  \*************************/
+/***/ 8614:
 /***/ ((module) => {
 
 "use strict";
@@ -20974,10 +20554,7 @@ module.exports = require("events");
 
 /***/ }),
 
-/***/ "fs":
-/*!*********************!*\
-  !*** external "fs" ***!
-  \*********************/
+/***/ 5747:
 /***/ ((module) => {
 
 "use strict";
@@ -20985,10 +20562,7 @@ module.exports = require("fs");
 
 /***/ }),
 
-/***/ "net":
-/*!**********************!*\
-  !*** external "net" ***!
-  \**********************/
+/***/ 1631:
 /***/ ((module) => {
 
 "use strict";
@@ -20996,10 +20570,7 @@ module.exports = require("net");
 
 /***/ }),
 
-/***/ "os":
-/*!*********************!*\
-  !*** external "os" ***!
-  \*********************/
+/***/ 2087:
 /***/ ((module) => {
 
 "use strict";
@@ -21007,10 +20578,7 @@ module.exports = require("os");
 
 /***/ }),
 
-/***/ "path":
-/*!***********************!*\
-  !*** external "path" ***!
-  \***********************/
+/***/ 5622:
 /***/ ((module) => {
 
 "use strict";
@@ -21018,10 +20586,7 @@ module.exports = require("path");
 
 /***/ }),
 
-/***/ "url":
-/*!**********************!*\
-  !*** external "url" ***!
-  \**********************/
+/***/ 8835:
 /***/ ((module) => {
 
 "use strict";
@@ -21029,10 +20594,7 @@ module.exports = require("url");
 
 /***/ }),
 
-/***/ "util":
-/*!***********************!*\
-  !*** external "util" ***!
-  \***********************/
+/***/ 1669:
 /***/ ((module) => {
 
 "use strict";
@@ -21040,10 +20602,7 @@ module.exports = require("util");
 
 /***/ }),
 
-/***/ "vscode":
-/*!*************************!*\
-  !*** external "vscode" ***!
-  \*************************/
+/***/ 7549:
 /***/ ((module) => {
 
 "use strict";
@@ -21089,17 +20648,14 @@ var __webpack_exports__ = {};
 (() => {
 "use strict";
 var exports = __webpack_exports__;
-/*!**************************!*\
-  !*** ./src/extension.ts ***!
-  \**************************/
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.activate = void 0;
-const net = __webpack_require__(/*! net */ "net");
-const vscode = __webpack_require__(/*! vscode */ "vscode");
-const node_1 = __webpack_require__(/*! vscode-languageclient/node */ "./node_modules/vscode-languageclient/node.js");
-const DebuggerExtension = __webpack_require__(/*! ./Debugger/extension */ "./src/Debugger/extension.ts");
-const path = __webpack_require__(/*! path */ "path");
+const net = __webpack_require__(1631);
+const vscode = __webpack_require__(7549);
+const node_1 = __webpack_require__(6749);
+const DebuggerExtension = __webpack_require__(2763);
+const path = __webpack_require__(5622);
 function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('extension.Slang-debug.getProgramName', config => {
         return vscode.window.showInputBox({
@@ -21128,7 +20684,7 @@ function activate(context) {
     DebuggerExtension.activate(context);
     if (false) {}
     else {
-        const serverModule = context.asAbsolutePath(path.join('dist', 'slangd.exe'));
+        const serverModule = context.asAbsolutePath(path.join('./dist', 'slangd.exe'));
         const serverOptions = {
             command: serverModule,
             args: ["-c"],

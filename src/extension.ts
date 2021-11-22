@@ -126,7 +126,7 @@ export function activate(context: vscode.ExtensionContext) {
         client.start();    
     } else
     {
-        const serverModule = context.asAbsolutePath(path.join('dist', 'slangd.exe'));
+        const serverModule = context.asAbsolutePath(path.join('./dist', 'slangd.exe'));
 
         const serverOptions  = {
             command: serverModule, 
