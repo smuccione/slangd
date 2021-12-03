@@ -96,7 +96,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     DebuggerExtension.activate(context);
 
-    if ( 0 )
+    if ( 1 )
     {
         const connectionInfo = {
             port: 6996,

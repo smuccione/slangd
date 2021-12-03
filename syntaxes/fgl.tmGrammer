@@ -3,7 +3,7 @@
 <plist version="1.0">
     <dict>
         <key>name</key>
-        <string>slang</string>
+        <string>fgl</string>
         <key>scopeName</key>
         <string>source.fgl</string>
         <key>fileTypes</key>

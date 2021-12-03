@@ -3,25 +3,20 @@
 <plist version="1.0">
     <dict>
         <key>name</key>
-        <string>slang</string>
+        <string>ap</string>
         <key>scopeName</key>
         <string>source.ap</string>
         <key>fileTypes</key>
         <array>
             <string>ap</string>
-            <string>apf</string>
-            <string>aps</string>
         </array>
         <key>uuid</key>
-        <string>8BE8B5D-894F-421A-B56B-912150753ECA</string>
-        <key>include</key>
-        <string>
-        </key>>
+        <string>72F6E476-853F-4F47-8695-92DB03EDEBD7</string>
         <key>patterns</key>
         <array>
             <dict>
                 <key>match</key>
-                <string>\b(?i:(if|elseif|else|while|repeat|until|for|foreach|if|switch|case|default|break|continue|try|catch|finally|end|return))\b\s+(\w+(\.\w+)?)</string>
+                <string>\b(?i:(if|elseif|else|while|repeat|until|for|foreach|if|switch|case|default|break|continue|try|catch|finally|end|return))\b</string>
                 <key>name</key>
                 <string>keyword.flowcontrol</string>
             </dict>
@@ -32,25 +27,23 @@
                 <string>keyword.other</string>
             </dict>
             <dict>
-                <key>
-                <dict>
-                    <key>match</key>
-                    <string>\b(?i:(function|procedure|iterator|extension|class|method|assign|access|get|put|property|namespace|operator|end))\b\s+(\w+(\.\w+)?)*</string>
-                    <key>name</key>
-                    <string>keyword.other</string>
-                </dict>
-                <dict>
-                    <key>match</key>
-                    <string>@?[_[:alpha:]][_[:alnum:]]*</string>
-                    <key>name</key>
-                    <string>entity.name.type</string>
-                </dict>
+                <key>patterns</key>
+                <array>
+                    <dict>
+                        <key>match</key>
+                        <string>\b(?i:(function|procedure|iterator|extension|class|method|assign|access|get|put|property|namespace|operator|end))\b</string>
+                        <key>name</key>
+                        <string>keyword.other</string>
+                    </dict>
+                    <dict>
+                        <key>include</key>
+                        <string>#type</string>
+                    </dict>
+                </array>
             </dict>
             <dict>
-                <key>match</key>
-                <string>\b(?i:(integer|int|float|double|string|null|nil|object|variant|var|local|static|const|field))\b\s+(\w+(\.\w+)?)</string>
-                <key>name</key>
-                <string>entity.name.type</string>
+                <key>include</key>
+                <string>#type</string>
             </dict>
             <dict>
                 <key>match</key>
@@ -60,7 +53,7 @@
             </dict>
             <dict>
                 <key>match</key>
-                <string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
+                <string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)\b</string>
                 <key>name</key>
                 <string>constant.numeric</string>
             </dict>
@@ -94,7 +87,7 @@
                 <key>end</key>
                 <string>^</string>
                 <key>name</key>
-                <string>comment.block.slang</string>
+                <string>comment.line.double-slash.slang</string>
             </dict>
             <dict>
                 <key>begin</key>
@@ -167,5 +160,15 @@
                 </array>
             </dict>
         </array>
+        <key>repository</key>
+        <dict>
+            <key>type</key>
+            <dict>
+                <key>match</key>
+                <string>\b(?i:(integer|int|float|double|string|null|nil|object|variant|var|local|static|const|field))\b</string>
+                <key>name</key>
+                <string>entity.name.type</string>
+            </dict>
+        </dict>
     </dict>
 </plist>
