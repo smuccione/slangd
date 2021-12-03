@@ -20851,23 +20851,16 @@ function activate(context) {
         }
     };
     DebuggerExtension.activate(context);
-    if (true) {
-        const connectionInfo = {
-            port: 6996,
-            host: "127.0.0.1"
-        };
-        const serverOptions = () => {
-            const socket = net.connect(connectionInfo);
-            const result = {
-                writer: socket,
-                reader: socket
-            };
-            return Promise.resolve(result);
+    if (false) {}
+    else {
+        const serverModule = context.asAbsolutePath(path.join('./dist', 'slangd.exe'));
+        const serverOptions = {
+            command: serverModule,
+            args: ["-c"],
         };
         const client = new node_1.LanguageClient('Slang', 'Slang Language Server', serverOptions, clientOptions);
         client.start();
     }
-    else {}
 }
 exports.activate = activate;
 
